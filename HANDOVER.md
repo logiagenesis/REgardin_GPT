@@ -18,7 +18,7 @@ Attached master preserved byte-for-byte. All nine original Drive audit files rea
 
 ## Validation
 
-22-route build, metadata/internal-link/content gate, lint, HTML validation; 33 browser tests covering route accessibility, six viewports, keyboard menu, brief handling, consent and no-JS navigation. Backend/image suite: 18 tests using actual SQLite schema and controlled external-provider responses. Cloudflare Functions bundle compiles; local runtime previously checked disabled API/503, representative 301 and 410. GitHub workflow added; remote workflow execution is reported separately.
+22-route build, metadata/internal-link/content gate, lint, HTML validation; Linkinator 8.1.0 reports 34 checked links and zero broken (local origins, CSS and fragments); 33 browser tests covering route accessibility, six viewports, keyboard menu, brief handling, consent and no-JS navigation. Backend/image suite: 18 tests using actual SQLite schema and controlled external-provider responses. Cloudflare Functions bundle compiles; local runtime previously checked disabled API/503, representative 301 and 410. GitHub workflow added; remote workflow execution is reported separately.
 
 Final Lighthouse mobile performance/accessibility/best practices/SEO: home 100/100/100/66; contact 100/100/96/66; renovations 100/100/100/66; project layout 99/100/100/66. Home/contact/renovation CLS 0; project layout 0.071. Preview SEO score reflects deliberate noindex/robots; production SEO is not verified. A prior run found homepage font-swap CLS 0.225; preloads fixed it. Production approval gate was tested and correctly rejects missing approval.
 
@@ -31,3 +31,7 @@ After authorised account connection: deploy noindex preview; bind D1/private R2/
 Launch also requires approved contact/monitored email, photograph and testimonial permissions, brand, confirmed service/area/operations facts, and owner/legal review of terms, retention, Information Officer and cross-border providers. Existing Google/Meta invitations are needed before account tasks. The grouped confirmation register avoids repeated questions; none of these prevented building this draft.
 
 Before domain cutover: authorised private WordPress backup, Search Console/backlink review, production content/SEO/security checks and rollback window. Preserve MX/SPF/DKIM/DMARC. No DNS, live-site, messaging or advertising changes have occurred.
+
+## Pushed release
+
+Website release fec5088d8fe7a9caf4fdf04193eae09eec11300a is on main and verified by git ls-remote. Repository: https://github.com/logiagenesis/REgardin_GPT. Desktop/mobile screenshots are committed under docs/screenshots. A subsequent documentation commit records this receipt; it does not deploy the site. Initial Actions API status retrieval returned proxy 403, so remote CI is not claimed.

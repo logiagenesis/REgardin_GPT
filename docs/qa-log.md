@@ -40,3 +40,5 @@ Live preview, production deployment and delivered-mail verification are unrun; t
 - GitHub Actions added; its actual remote result remains to be inspected after push. Launch blockers and unmet JS-free form/photo-led/share-preview requirements are explicit in HANDOVER.md.
 
 - Clean browser rerun after generated-file writes completed: 33 passed, zero axe violations. Final unit suite: 18 passed. Font-face spacing lint corrections are formatting only; no assertion settings were relaxed.
+
+- Linkinator 8.1.0 scanned the built preview with recursion, CSS URLs and fragment validation: 34 links, zero broken. External origins excluded from this local scan; external/account checks retain their separate status.
