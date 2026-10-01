@@ -1,3 +1,7 @@
+# 0.4 — User-confirmed cPanel hosting
+
+Replaced Cloudflare as the deployment target with a cPanel Apache/PHP package. Added private SQLite enquiries/uploads, native HTML form submission, session verification, expiring download links and local-mail retry cron. Added real PHP/HTTP regression tests and a committed ZIP/checksum. Corrected hosting/privacy documentation and cloud startup instructions. No account upload or live cutover.
+
 # 0.3 — Source reconciliation and release tooling
 
 Added the project-page layout, responsive approved-image pipeline, expiring private attachment links, disabled consent integration, font preloads, GitHub QA workflow, source/competitor inventories, migration map and Google/social planning packs. Recovered interrupted uploads before notification. No public deployment or account activation.

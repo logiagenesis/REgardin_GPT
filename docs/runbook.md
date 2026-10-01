@@ -1,31 +1,13 @@
-# Development and release runbook
+# Development and release runbook — cPanel
 
-Use the existing isolated checkout. Node 24.19.0 was verified; Vite 8.3.1 supports Node 20.19+/22.12+ per its official guide. The environment uses Node 24.
+The user's cPanel instruction overrides the attached master prompt's default hosting choice. Read docs/cpanel-deployment.md for the deployment package, private layout and staging checks. Cloudflare and GitHub Pages are not deployment requirements.
 
-## Local development
+Use this checkout and Node 24. Run npm ci --ignore-scripts, bash scripts/setup-php.sh, npm run package:cpanel, npm run check, npm run lint, npm run audit:html, npm run test:unit and npm test. The PHP test bootstrap validates an existing PHP 8.2+ runtime or extracts SHA-256-verified Debian 13 amd64 packages into /workspace/.tools without changing system files. CI provisions PHP with PDO SQLite and fileinfo. The cPanel host still needs its own extension verification; a local runtime does not prove the host's configuration.
 
-Run `npm ci --ignore-scripts`, `npm run build`, then `npm run dev`. Static content works without client rendering. Preview routes are noindex; raw source research is ignored. Use `CHROME_PATH=/usr/bin/chromium npm test` when system Chromium is installed.
+npm run dev starts the local static preview; it is not a public preview. Tests exercise PHP separately with a temporary private database/storage/config and localhost HTTP session transport. Test fixtures are synthetic and removed afterwards. Actual staging HTTPS, Apache rules and recipient mailbox delivery remain to be verified with account access.
 
-For Cloudflare runtime checks: `WRANGLER_SEND_METRICS=false XDG_CONFIG_HOME=/workspace/.config WRANGLER_LOG_PATH=/tmp/regardin-pages.log npm exec wrangler -- pages dev dist --port 8788 --compatibility-date=2026-09-30 --d1 DB=local-regardin --r2 UPLOADS=local-regardin-uploads --binding SITE_MODE=preview`. This local service is not a public deployment.
+npm run package:cpanel builds the noindex preview and writes releases/regardin-cpanel-preview.zip plus its SHA-256. The archive includes only public site assets, PHP code and an unconfigured private config example. It excludes runtime secrets, uploaded customer data, research originals, the earlier Cloudflare functions and its _headers/_redirects files. Do not upload private into a web-accessible directory. Use a new staging document root; preserve the live WordPress installation and all mail DNS records.
 
-## Cloudflare account setup
+Online enquiry readiness needs PHP sessions, PDO SQLite, fileinfo, writable private storage, exact HTTPS origin, independently generated signing/operator secrets and confirmed sender/recipient. Unconfigured accounts fail closed. mail() handoff is not mailbox receipt. Configure the private cron, inspect queued/review notifications and verify actual delivery before launch. Native HTML submissions and JavaScript enhancement share validation/storage; direct thank-you visits do not show a stored receipt.
 
-Connect the confirmed repository to an authorised Pages account. Build `npm run build`, output `dist`, Node 24. Keep the preview hostname separate from the live domain. Do not change DNS or mail records.
-
-Create/bind D1 as `DB` and apply `migrations/0001_enquiries.sql`. Bind a private R2 bucket as `UPLOADS`; do not enable its public access. Configure `PUBLIC_ORIGIN` to the exact Pages origin, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET`, `EMAIL_API_KEY`, `FROM_EMAIL`, `NOTIFICATION_EMAIL`, `UPLOAD_LINK_SECRET`, `OPERATOR_TOKEN`. Generate the last two as strong independent secrets directly in Cloudflare’s secret settings; the signing key is used locally by Web Crypto and must be a real runtime secret, not a proxy placeholder. Resend is an implemented notification adapter, a proposed provider pending approval; replace only after a provider decision. Use an authenticated sender and customer Reply-To.
-
-Deploy `workers/notifications.js` as an authorised scheduled Worker with the same D1 and mail bindings. Set a five-minute cron schedule. Monitor outbox entries in pending/sending state and attempt count. The runtime compiler has been checked; account deployment has not.
-
-Private attachments remain in R2. Notification emails include HMAC-signed download URLs expiring after 15 minutes. Links reject expiry/tampering and force a download with no-store/sandbox headers. An authorised operator can POST an attachment ID to `/api/attachments/links` using the configured Bearer operator token to renew a link. Never put that token into a public page or client bundle. Rotation, retention, access ownership and live account testing remain required before launch.
-
-Turnstile requires JavaScript. The API returns accessible HTML for normal multipart submissions with a valid verification token, but a fully JavaScript-disabled browser uses the direct telephone/email fallback. A JS-free verified online submission path is not yet implemented; this limitation is explicit rather than bypassing abuse prevention.
-
-## Enquiry readiness
-
-GET `/api/enquiries` reports enabled only with all required bindings. Submit synthetic data on the deployed preview: test receipt storage, duplicates, rejected files, upload failure, notification retries and actual mailbox receipt. A provider HTTP 200 is not delivered-mail evidence. Do not use a real customer's enquiry for QA.
-
-## Production and rollback
-
-Resolve the confirmation register and approve legal/data flows. Production build fails while approval flags or `[CONFIRM]` content remain. Verify real status codes, crawlability, CSP, metadata, redirects and domain behaviour on the authorised deployment.
-
-Before any domain cutover: obtain a private WordPress/hosting backup and restore instructions, check Search Console/backlinks, preserve all MX/SPF/DKIM/DMARC records and retain the old hosting through the agreed rollback window. No cutover, backup access or DNS change was performed here.
+Production approvals remain separate. Resolve contact/photo/brand/legal confirmations, take an authorised WordPress backup and test restoration, review backlinks/retired URLs, verify the production build and Apache indexing/security configuration, then perform only an explicitly approved cutover. No deployment or cutover has occurred.

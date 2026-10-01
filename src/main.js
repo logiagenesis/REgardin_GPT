@@ -35,7 +35,7 @@ dialog?.addEventListener('click', (event) => {
 const form = document.querySelector('#enquiry-form');
 if (form) {
   const status = document.querySelector('#form-status');
-  form.elements.idempotencyKey.value = crypto.randomUUID();
+  form.elements.idempotencyKey.value ||= crypto.randomUUID();
   const brief = () => {
     const d = new FormData(form);
     return `Project enquiry — ${d.get('service')}\n\nName: ${d.get('name')}\nPhone: ${d.get('phone')}\nEmail: ${d.get('email')}\nProject suburb: ${d.get('suburb')}\nService: ${form.elements.service.selectedOptions[0].textContent}\nPreferred timing: ${d.get('timing') || 'Not specified'}\n\n${d.get('brief')}`;
@@ -64,13 +64,24 @@ if (form) {
   fetch('/api/enquiries', { headers: { Accept: 'application/json' } })
     .then((r) => (r.ok ? r.json() : null))
     .then((config) => {
-      if (!config?.enabled || !config.siteKey) return;
+      if (!config?.enabled) return;
+      if (config.csrf) {
+        let csrf = form.querySelector('[name="csrf"]');
+        if (!csrf) {
+          csrf = document.createElement('input');
+          csrf.type = 'hidden';
+          csrf.name = 'csrf';
+          form.append(csrf);
+        }
+        csrf.value = config.csrf;
+      }
       connected = true;
       document.querySelector('#submit-enquiry').hidden = false;
       document.querySelector('#email-brief').className = 'text-link';
       document.querySelector('#upload-field').hidden = false;
       document.querySelector('.form-notice').innerHTML =
         '<strong>Send your project enquiry.</strong><p>Your enquiry is stored securely before a receipt is shown. Up to five optional photographs or plans can be included.</p>';
+      if (!config.siteKey) return;
       const script = document.createElement('script');
       script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
       script.onload = () => {

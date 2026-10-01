@@ -15,9 +15,14 @@ jobs:
         with:
           node-version: '24'
           cache: npm
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_sqlite, fileinfo
+          coverage: none
       - run: npm ci --ignore-scripts
       - run: npx playwright install --with-deps chromium
-      - run: npm run build
+      - run: npm run package:cpanel
       - run: npm run lint
       - run: npm run audit:html
       - run: npm run check

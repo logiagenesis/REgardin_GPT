@@ -42,3 +42,16 @@ Live preview, production deployment and delivered-mail verification are unrun; t
 - Clean browser rerun after generated-file writes completed: 33 passed, zero axe violations. Final unit suite: 18 passed. Font-face spacing lint corrections are formatting only; no assertion settings were relaxed.
 
 - Linkinator 8.1.0 scanned the built preview with recursion, CSS URLs and fragment validation: 34 links, zero broken. External origins excluded from this local scan; external/account checks retain their separate status.
+
+## cPanel correction — 01/10/2026
+
+- Explicit user cPanel instruction supersedes the attached master prompt's default host. No GitHub Pages/Cloudflare deployment was performed.
+- Built 22-route cPanel ZIP with Apache 301/410/404/security/noindex configuration. Private database/uploads/config stay outside public_html. Zip omits legacy Cloudflare runtime and secrets.
+- PHP 8.4.24 extracted from official Debian packages after SHA-256 verification. All eight PHP source files pass syntax validation. Three PHP regression checks pass: syntax; actual SQLite/private configuration/idempotency/rate limits/link expiry/retry; actual HTTP session/multipart upload, duplicate receipts, native HTML POST and escaped error restoration.
+- Initial HTTP verification failed because the local PHP runtime's compiled session directory was unwritable. Configured a private temporary session directory for local tests; host session permissions must be checked on staging. Receipt callback used preg_replace with a closure; corrected to preg_replace_callback, then the HTTP receipt test passed. A Vite development pre-transform error was also corrected by emitting its absolute allowed module path.
+- Native mail handoff is controlled in unit tests; local HTTP tests retain queued notifications when the test machine has no sendmail. No recipient mailbox delivery claimed. Interrupted native-mail handoffs require operator review rather than automatic resend.
+- Browser regression before the Vite-path correction: 33 passed. Clean rerun and final mobile Lighthouse results follow. Actual Apache/cPanel/HTTPS/mail acceptance remains blocked by missing staging access, not by Cloudflare authentication.
+
+- Final cPanel correction retest: lint, 22-route build/HTML/content gates, all 33 browser checks and all 21 unit/integration checks pass. No Vite pre-transform errors remain. Linkinator: 34 local links, zero broken. Archive inspection confirms no runtime config, customer storage or Cloudflare deployment files. SHA-256 is committed beside the ZIP.
+- Latest mobile Lighthouse: home 100/100/100/66; contact 99/100/96/66; renovations 100/100/100/66; project template 99/100/100/66 (performance/accessibility/best practices/SEO). Preview noindex warning remains visible. No real cPanel server, public-host or mailbox result is claimed.
+- Cloud environment install/start draft was saved with cPanel/PHP packaging instructions. Local PHP bootstrap and packaging commands were executed successfully. Existing Cloudflare credential declarations are obsolete and unused; the available configuration API cannot delete declarations.

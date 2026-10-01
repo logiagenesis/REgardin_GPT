@@ -13,3 +13,7 @@ research/
 
 .generated/
 public/fonts/
+
+.cpanel/
+hosting/cpanel/private/config.php
+hosting/cpanel/private/storage/

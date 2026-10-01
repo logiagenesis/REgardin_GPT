@@ -22,7 +22,8 @@
     "images": "node scripts/images.mjs",
     "prebuild": "node scripts/fonts.mjs && npm run images",
     "contact-sheet": "node scripts/contact-sheet.mjs",
-    "predev": "node scripts/fonts.mjs"
+    "predev": "node scripts/fonts.mjs",
+    "package:cpanel": "node scripts/cpanel.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

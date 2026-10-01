@@ -9,3 +9,5 @@ Complete useful work autonomously. Do not repeatedly pause for routine decisions
 Communication preference explicitly supplied by the user: never tell the user “you’re right” or use that phrase as reassurance. Avoid flattery and patronising agreement. Give factual progress and concrete outcomes.
 
 Use Node 24. Run npm run build, npm run check, npm run lint, npm run audit:html, npm test and npm run test:unit for relevant changes. CHROME_PATH may point to system Chromium; install a verified Playwright Chromium when a system browser is unavailable. Preview SEO crawlability is deliberately blocked, and must remain clearly distinguished from production SEO validation.
+
+Hosting correction from the user: target cPanel/Apache/PHP. This overrides the attached master prompt’s Cloudflare default. Do not deploy through Cloudflare or GitHub Pages. Package the built site for an isolated cPanel staging document root, with server data outside the public directory. Preserve existing live WordPress and mail DNS; no cutover is authorised.

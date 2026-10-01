@@ -46,7 +46,12 @@ export default defineConfig({
           if (!route) return next();
           try {
             res.setHeader('Content-Type', 'text/html');
-            res.end(await server.transformIndexHtml(pathname, render(route)));
+            res.end(
+              await server.transformIndexHtml(
+                pathname,
+                render(route).replace('src="/src/main.js"', `src="/@fs${resolve('src/main.js')}"`),
+              ),
+            );
           } catch (error) {
             next(error);
           }

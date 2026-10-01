@@ -10,5 +10,5 @@ These items are recorded together so development can proceed without repeated qu
 - Operations: supervision, communication, site protection, variations, handover.
 - Proof: approved photographs, project names/context, before/after pairings, testimonial permission.
 - Brand: approved logo and palette. Current wordmark and palette are proposed design treatments.
-- Accounts: authorised Cloudflare invitation, email provider and recipient, existing Google/Meta property access. No passwords requested.
+- Accounts: authorised cPanel staging access, actual PHP capabilities and confirmed sender/recipient, existing Google/Meta property access. No passwords requested.
 - Privacy: Information Officer, retention, cross-border arrangements and legal approval.
