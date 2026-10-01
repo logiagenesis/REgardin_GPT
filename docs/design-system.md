@@ -1,9 +1,13 @@
-# Construction website design system
+# Editorial construction design system
 
-The existing Regardin logo anchors the white and green brand palette: forest ink #15291f, green #006644, pale stone #eef2ee and white. DM Sans provides clear, substantial headings and readable body text; fonts are self-hosted with swap and critical-face preloads.
+The earlier green overlay/card-grid homepage was rejected by the user. This revision replaces its composition across the whole site rather than changing card colours.
 
-The homepage opens with a full-width photograph of timber decking and a pergola from the source portfolio. A building-extension photograph introduces the company; seven photographic service cards and a six-image portfolio section show the range of work. The portfolio page presents all 16 selected photographs. Every service page includes relevant source photography and specific scope descriptions.
+The palette returns to warm mineral tones: paper #f8f7f3, limestone #e8e4da, charcoal #242824 and green #0b6244, alongside the original source-site wordmark. Bodoni Moda regular/italic gives headings an architectural rhythm; DM Sans supports readable descriptions, navigation and forms. Both families are self-hosted. Critical faces are preloaded, and explicit image geometry avoids late layout shifts.
 
-Responsive AVIF/WebP variants retain natural aspect ratios, strip embedded metadata and avoid enlarging originals. Captions describe visible work without inventing client names, locations, dates or outcomes. The image manifest records source URLs and original hashes. The user authorised source-image reuse for this redesign on 01/10/2026; independent ownership verification remains a production review item.
+The opening composition pairs the headline with a clear, uncovered project photograph and a smaller timber detail. There is no dark photograph overlay. The content has a defined sequence: introduction, services, selected work, client feedback, project questions and contact.
 
-The restored wordmark is derived from the source-site logo, not a substitute typographic mark. The interface uses clear quote/contact links, square buttons, quiet borders and a responsive keyboard-accessible menu. Motion respects reduced-motion preferences. Automated contrast checks cover all 22 routes.
+Seven service links form a ruled index next to one large project photograph. Pointer hover and keyboard focus display relevant source images without changing the link behaviour. With JavaScript disabled all seven links remain usable and the brickwork photograph remains visible. On phones the list and photograph stack vertically.
+
+Selected work uses four large photographs in staggered columns. The complete portfolio retains all 16 source photographs in a natural-aspect-ratio masonry layout. Source captions describe visible work without fabricated client names, places, dates or outcomes. Service, about, contact, review and legal pages share the same typography, colour and spacing system.
+
+Buttons, navigation and disclosures have keyboard focus states. The mobile contact bar and menu preserve their existing interactions. Real no-JavaScript navigation and PHP form behaviour remain supported. Reduced-motion preferences disable incidental transitions. No stock badges, invented figures, decorative icon grids or generated project imagery are introduced.

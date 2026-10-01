@@ -161,3 +161,17 @@ for (const comparison of document.querySelectorAll('[data-comparison]')) {
     comparison.style.setProperty('--split', slider.value + '%'),
   );
 }
+
+const servicePreviews = document.querySelectorAll('[data-service-image]');
+for (const service of document.querySelectorAll('[data-service-photo]')) {
+  const show = () => {
+    for (const preview of servicePreviews) {
+      preview.hidden = preview.dataset.serviceImage !== service.dataset.servicePhoto;
+    }
+    for (const item of document.querySelectorAll('[data-service-photo]')) {
+      item.classList.toggle('is-active', item === service);
+    }
+  };
+  service.addEventListener('pointerenter', show);
+  service.addEventListener('focus', show);
+}

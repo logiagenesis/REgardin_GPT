@@ -2,7 +2,7 @@
 
 A dedicated copywriter rewrote the homepage, about page, seven service descriptions, portfolio introduction, process guidance and contact invitations against the archived source site. The structured copy and provenance are in src/data/copy.json and src/data/services.json.
 
-- Home: construction and renovations in Cape Town, residential/commercial scope, source photographs, seven concrete service categories, customer preparation, original testimonial excerpts and contact links.
+- Home: concise construction and renovation proposition, residential/commercial scope, clear source photography, a seven-service index, four selected-work photographs, original testimonial excerpts, practical questions and contact links.
 - Services: source-supported work including boundary walls, second-floor brickwork, doorway changes, painting, hardwood decks/pergolas, concrete, plastering, screeds and custom braais. No fixed package, price or completion promise.
 - About: the published construction, renovation, maintenance and finishing scope. Unverified credentials and biography omitted.
 - Projects: 16 original source-site photographs with descriptive captions. The former empty archive and conceptual project page now show actual photographs; client names, addresses and case-study results are not fabricated.

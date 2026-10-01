@@ -1,3 +1,7 @@
+# 0.7 — Editorial construction redesign
+
+Replaced the rejected overlay/card-grid homepage with a clear split photographic opening, warm mineral tones, serif headings, a compact service index with keyboard/pointer photo previews, staggered selected work and natural-ratio portfolio images. Rebuilt the shared styles across every route, simplified service headings, shortened hero copy and moved the preview label into the footer. Retained the original logo, all source photographs, source-supported services and enquiry functionality. Updated the cPanel package and screenshot evidence.
+
 # 0.6 — Source photographs and construction copy
 
 Rebuilt the homepage and service pages around 16 original source photographs, restored the source-site logo and introduced a dedicated copywriter’s rewrite grounded in published construction scopes. Replaced the empty portfolio and conceptual project page with real-photo galleries. Committed responsive AVIF/WebP derivatives and provenance; fresh builds reuse the verified derivative cache without requiring private originals. Added browser assertions for every photographed route and fully loaded screenshots. Updated the root-path cPanel package and repository-path GitHub preview.

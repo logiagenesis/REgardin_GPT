@@ -1,9 +1,9 @@
 {
   "home": {
     "eyebrow": "REGARDIN CONSTRUCTION · CAPE TOWN",
-    "heroHeadline": "Construction & renovations in Cape Town.",
-    "heroLines": ["Construction &", "renovations", "in Cape Town."],
-    "heroBody": "From boundary walls and property renovations to hardwood decking and the final coat of paint. Building and finishing work for homes and businesses, with one team to bring the details together.",
+    "heroHeadline": "Build. Renovate. Make it yours.",
+    "heroLines": ["Build. Renovate.", "Make it yours."],
+    "heroBody": "Building, renovations and finishing for Cape Town homes and businesses. Brickwork, timber, concrete and the final coat of paint.",
     "heroPrimary": "Request a quote",
     "heroSecondary": "See our work",
     "heroFootnote": "BRICKWORK · TIMBER · CONCRETE · FINISHES",
@@ -41,9 +41,9 @@
     "secondaryLink": "See the portfolio"
   },
   "cta": {
-    "eyebrow": "YOUR NEXT BUILDING PROJECT",
-    "heading": "What would you like to build or change?",
-    "body": "Tell us about your property, the work you need and your location. Add photographs or plans if you have them, or call Regard to talk it through.",
+    "eyebrow": "YOUR NEXT PROJECT",
+    "heading": "Let’s talk about what comes next.",
+    "body": "A new build, a renovation or the finishing touches. Tell us what you have in mind, where the property is and what you want to change.",
     "primary": "Request a quote",
     "secondary": "Call Regard"
   },
@@ -58,8 +58,8 @@
   },
   "projects": {
     "eyebrow": "REGARDIN CONSTRUCTION PORTFOLIO",
-    "heading": "See the work behind the services.",
-    "body": "Painting, masonry, timber and concrete work from Regardin’s existing website. Browse the photographs to find work relevant to your own property.",
+    "heading": "Construction, up close.",
+    "body": "Brickwork, timber, interiors and outdoor spaces. A closer look at Regardin’s building and finishing work.",
     "galleryHeading": "Construction, renovation & finishing work",
     "galleryNote": "Photographs from the existing Regardin portfolio. Individual project locations and specifications are not added where the source does not provide them.",
     "cta": "Talk to us about similar work"

@@ -16,3 +16,7 @@ User explicitly confirmed cPanel and rejected the previous hosting assumption. T
 ## Photographic construction rebuild
 
 Rebuilt main around 16 source photographs, the restored source logo and specialist copywriting grounded in archived services. Updated responsive image derivatives, loaded screenshots, cPanel ZIP/checksum and GitHub preview assets. Local validation: 34 browser checks, 21 unit/PHP/integration checks, 22 route build/HTML/link gates and mobile Lighthouse performance 100 on four representative routes with CLS 0. Commit identity and remote SHA are provided in the push receipt; deployment status is checked separately after push.
+
+## Editorial redesign following visual rejection
+
+Rebuilt the entire visual system with warm mineral tones, charcoal, Bodoni Moda headings and a clear split photographic opening. Seven service links drive a relevant photo preview; selected work uses staggered large images and the full portfolio retains natural proportions. Original source imagery, source-grounded copy and backend behaviour remain in place. Local checks: 35 browser and 21 unit/PHP tests, 22-route build/HTML/link gates, and mobile performance 99–100 on representative routes. Updated cPanel package/checksum and loaded screenshots are included in the pushed revision. Remote SHA and workflow status are reported independently in the release receipt.
