@@ -26,6 +26,7 @@ jobs:
         env:
           SITE_MODE: preview
           SITE_BASE: /REgardin_GPT/
+          SITE_ORIGIN: https://logiagenesis.github.io
           VITE_STATIC_PREVIEW: 'true'
       - run: npm run check
         env:

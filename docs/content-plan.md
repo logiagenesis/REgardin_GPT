@@ -1,17 +1,14 @@
 # Content plan
 
-The pages answer what Regardin does, where it is based, what information to send and how to start a scope discussion. They avoid operational promises that the evidence does not support.
+A dedicated copywriter rewrote the homepage, about page, seven service descriptions, portfolio introduction, process guidance and contact invitations against the archived source site. The structured copy and provenance are in src/data/copy.json and src/data/services.json.
 
-- Home: service/location proposition, introduction, ruled service index, material studies, brief preparation, faithful testimonial excerpts, FAQs and contact invitation.
-- Services: seven enquiry categories with direct definitions, proposed brief items, site considerations and contact routes. Descriptions are not fixed packages.
-- About: published service range and base; history and owner-management claims omitted pending approval.
-- Planning: customer preparation guidance, not an invented business procedure.
-- Projects: truthful archive status and a clearly labelled project-page layout. Real case studies require approved project facts and photographs.
-- Reviews: source testimonials, exact wording, no stars or third-party review attribution.
-- Contact: useful brief builder, calls/email now; actual API submission only when configured.
-- Areas: base and location-enquiry route; no unsupported suburb coverage or doorway pages.
-- Legal: actual preview behaviour and planned data flows; clearly marked drafts for review.
+- Home: construction and renovations in Cape Town, residential/commercial scope, source photographs, seven concrete service categories, customer preparation, original testimonial excerpts and contact links.
+- Services: source-supported work including boundary walls, second-floor brickwork, doorway changes, painting, hardwood decks/pergolas, concrete, plastering, screeds and custom braais. No fixed package, price or completion promise.
+- About: the published construction, renovation, maintenance and finishing scope. Unverified credentials and biography omitted.
+- Projects: 16 original source-site photographs with descriptive captions. The former empty archive and conceptual project page now show actual photographs; client names, addresses and case-study results are not fabricated.
+- Reviews: faithful source text, with no invented star ratings or third-party attribution.
+- Contact: useful project brief with call/email fallback on GitHub Pages; PHP-backed submission in the separately packaged cPanel site when configured.
+- Areas: published Cape Town base without unsupported suburb promises.
+- Legal: preview behaviour and planned data handling remain drafts for production review.
 
-Approved assets will replace concept studies. Prioritise a wide finished-space hero, material detail, one documented renovation and one timber/concrete project. The image pipeline produces responsive AVIF/WebP and a real-photo OG crop after explicit approval.
-
-Owner review is batched in the confirmation register. No ranking, price, warranty or response-time claims are used to pad the copy.
+Unresolved business facts remain in the confirmation register. No pricing, warranty, response-time, registration or ranking claims are added. Copywriting assistance is an agent role, not a claim that an external human agency was engaged.

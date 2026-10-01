@@ -1,3 +1,7 @@
+# 0.6 — Source photographs and construction copy
+
+Rebuilt the homepage and service pages around 16 original source photographs, restored the source-site logo and introduced a dedicated copywriter’s rewrite grounded in published construction scopes. Replaced the empty portfolio and conceptual project page with real-photo galleries. Committed responsive AVIF/WebP derivatives and provenance; fresh builds reuse the verified derivative cache without requiring private originals. Added browser assertions for every photographed route and fully loaded screenshots. Updated the root-path cPanel package and repository-path GitHub preview.
+
 # 0.5 — Visible GitHub Pages design preview
 
 Added the missing build/deploy workflow for the user-configured GitHub Pages source. Fixed repository-base navigation/assets and explicitly disabled PHP/backend submission on the static preview. cPanel remains the full-site deployment target.

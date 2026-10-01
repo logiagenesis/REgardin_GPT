@@ -2,76 +2,84 @@
   {
     "slug": "renovations-alterations",
     "title": "Renovations & alterations",
-    "short": "A new chapter for an existing space.",
-    "description": "Renovation and alteration work changes how an existing building looks or functions. Tell us which spaces you want to adapt and what you need them to do.",
+    "short": "Change the layout. Renew the finishes. Make better use of your property.",
+    "description": "From a room renovation to a larger property transformation, Regardin Construction brings building work and finishing together. Rework an existing layout, open up a doorway or refresh the surfaces that make a space feel complete.",
     "items": [
-      "Room alterations and renovation work",
-      "Brickwork, plastering and finishing",
-      "Coordination of the work within your brief"
+      "Home and commercial renovations",
+      "Room alterations and doorway changes",
+      "Brickwork, plastering and finishing"
     ],
-    "consideration": "For structural changes, establish the design and approval requirements before work begins. Send any available plans with your enquiry.",
+    "consideration": "Share what you want to change, photographs of the existing space and any plans. Structural alterations may need design input and approvals before building starts.",
     "drawing": "space"
   },
   {
     "slug": "brickwork-boundary-walls",
     "title": "Brickwork & boundary walls",
-    "short": "Structure, definition and a considered finish.",
-    "description": "Brickwork forms walls, openings and other masonry elements. Share the location, approximate dimensions and the finish you have in mind.",
-    "items": ["Boundary wall enquiries", "Masonry alterations and openings", "Plastered finishes"],
-    "consideration": "Wall height, foundations, property boundaries and structural requirements need to be assessed for the specific site.",
+    "short": "Boundary walls, second-floor additions and new doorways.",
+    "description": "Build a new boundary wall, add a second floor or change a doorway. Regardin handles the breaking and building work that gives your property its shape, from masonry alterations to new walls.",
+    "items": [
+      "New boundary walls",
+      "Brickwork for second-floor additions",
+      "New and altered doorways"
+    ],
+    "consideration": "Tell us the wall dimensions or the opening you need, and send plans where available. Foundations, structural design, property boundaries and approvals must suit the site.",
     "drawing": "wall"
   },
   {
     "slug": "painting",
     "title": "Interior & exterior painting",
-    "short": "The finishing layer that changes a space.",
-    "description": "Painting refreshes and protects interior and exterior surfaces. A useful brief includes the surface condition, access and the areas to be painted.",
+    "short": "A single feature wall or a fresh finish across the whole property.",
+    "description": "Refresh one room, introduce a feature wall or give your whole property a new colour scheme. Regardin provides interior and exterior painting for homes and businesses, with attention to the surfaces as well as the final coat.",
     "items": [
-      "Interior wall and ceiling painting",
-      "Exterior painting",
-      "Surface preparation within the agreed scope"
+      "Feature walls and room repaints",
+      "Full-property interior painting",
+      "Exterior painting"
     ],
-    "consideration": "Damp, loose coatings and cracks need assessment before a coating system is selected. Photograph the affected areas as well as the whole surface.",
+    "consideration": "Include photographs of cracks, damp or loose paint along with the areas you want painted. Surface condition and access help establish the preparation and coating requirements.",
     "drawing": "finish"
   },
   {
     "slug": "carpentry-decking-pergolas",
     "title": "Carpentry, decking & pergolas",
-    "short": "Timber work, from inside to out.",
-    "description": "Carpentry, decking and pergola work brings timber elements into indoor and outdoor spaces. Describe the intended use, approximate size and existing conditions.",
-    "items": ["Carpentry enquiries", "Timber decking", "Timber pergolas"],
-    "consideration": "Timber selection, exposure, fixings and ongoing maintenance should be agreed for your project. Any supporting structure needs assessment.",
+    "short": "Timber pergolas, hardwood decks and practical custom carpentry.",
+    "description": "Make more of your outdoor space with a timber pergola or hardwood deck. Regardin also undertakes carpentry work, including the cabinetry and walk-in closet work shown in the existing portfolio.",
+    "items": ["Custom timber pergolas", "Hardwood decking", "Carpentry and walk-in closet work"],
+    "consideration": "Share the size, intended use and a photograph of the area. Timber choice, supporting structure, exposure and maintenance requirements should be agreed for your project.",
     "drawing": "timber"
   },
   {
     "slug": "concrete-work",
     "title": "Concrete work",
-    "short": "Solid foundations. Deliberate details.",
-    "description": "Concrete work includes slabs, driveways, stairs and other formed elements. Share drawings if you have them and describe how the finished area will be used.",
-    "items": ["Driveways and slabs", "Concrete stairs", "Pool-structure enquiries"],
-    "consideration": "Ground conditions, drainage, reinforcement and curing requirements depend on the design and site. Structural elements need appropriate design input.",
+    "short": "Driveways, concrete slabs, stairs and pool structures.",
+    "description": "From a driveway to a concrete slab, staircase or pool structure, Regardin undertakes concrete work for practical everyday use and custom designs. The existing portfolio also includes concrete walls and countertops.",
+    "items": [
+      "Driveways and concrete slabs",
+      "Concrete stairs and walls",
+      "Pool structures and custom concrete work"
+    ],
+    "consideration": "Send dimensions and drawings if available. Ground conditions, drainage, reinforcement and the intended use inform the design; structural work needs appropriate professional input.",
     "drawing": "steps"
   },
   {
     "slug": "plastering-screeds-pool-plastering",
     "title": "Plastering, screeds & pool finishes",
-    "short": "A sound surface for what comes next.",
-    "description": "Plastering and screed work prepare or finish wall and floor surfaces. Pool-plastering enquiries should include photographs of the existing finish and any visible defects.",
-    "items": ["Wall plastering", "Floor screeds", "Pool plastering enquiries"],
-    "consideration": "The substrate, moisture conditions and intended finish affect the preparation and material choice. Final scope follows assessment.",
+    "short": "Wall plaster, floor screeds and pool finishes.",
+    "description": "Complete the walls, floors and pool surfaces around your property. Regardin’s existing portfolio includes pool plastering, scratch plaster and floor screeds alongside building and renovation work.",
+    "items": ["Wall and scratch plastering", "Floor screeds", "Pool plastering"],
+    "consideration": "Photographs of the existing surface help identify the work. Moisture, cracks, the substrate and the intended finish need assessment before preparation and materials are agreed.",
     "drawing": "finish"
   },
   {
     "slug": "custom-projects",
     "title": "Custom projects",
-    "short": "For the work that needs its own approach.",
-    "description": "Custom work starts with a specific brief. Tell us what you want to make or change, the available space and any drawings or references you already have.",
+    "short": "Bring your idea. Work out how to build it.",
+    "description": "A custom design does not always fit a standard service list. Regardin’s “Imagination Creation” service starts with your idea and works through the construction details, whether it involves timber, concrete, masonry or a combination of trades.",
     "items": [
-      "Bespoke construction enquiries",
-      "Details that combine different trades",
-      "Project-specific scope discussions"
+      "Custom construction designs",
+      "Work combining masonry, timber and concrete",
+      "Project ideas developed into an agreed scope"
     ],
-    "consideration": "Feasibility, specialist input and the work included in a quote need to be established before construction.",
+    "consideration": "Bring sketches, reference images or a simple description of the result you want. Feasibility, specialist input, materials and the quoted scope need to be established before work begins.",
     "drawing": "space"
   }
 ]

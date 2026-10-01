@@ -8,7 +8,7 @@ These items are recorded together so development can proceed without repeated qu
 - Areas: exact service suburbs; no suburb landing pages until substantiated.
 - Terms: quote validity, deposits, fees, turnaround, warranties and timelines. No such promises published.
 - Operations: supervision, communication, site protection, variations, handover.
-- Proof: approved photographs, project names/context, before/after pairings, testimonial permission.
-- Brand: approved logo and palette. Current wordmark and palette are proposed design treatments.
+- Proof: source-photo reuse is authorised for this redesigned preview; independent ownership/client permissions, project names/context, before/after pairings and testimonial permission remain production review items.
+- Brand: the source-site logo is restored and the redesign follows its green identity. Final production review remains pending.
 - Accounts: authorised cPanel staging access, actual PHP capabilities and confirmed sender/recipient, existing Google/Meta property access. No passwords requested.
 - Privacy: Information Officer, retention, cross-border arrangements and legal approval.

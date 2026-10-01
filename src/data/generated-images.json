@@ -1,1 +1,540 @@
-{}
+{
+  "decking-pergola": {
+    "original": "9d984b9c-02c9-4a47-8f51-ca541aa0eefd.jpg",
+    "originalSha256": "8ebed652267a0cb1629ab4d3676c0a1b0bf11745ddf980bbb1503b6eeb674baf",
+    "alt": "Timber decking and pergola beside a swimming pool",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/9d984b9c-02c9-4a47-8f51-ca541aa0eefd.jpg",
+    "variants": [
+      {
+        "url": "/images/decking-pergola-480.avif",
+        "width": 480,
+        "height": 360,
+        "bytes": 12128,
+        "format": "avif"
+      },
+      {
+        "url": "/images/decking-pergola-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 22626,
+        "format": "webp"
+      },
+      {
+        "url": "/images/decking-pergola-800.avif",
+        "width": 800,
+        "height": 600,
+        "bytes": 28469,
+        "format": "avif"
+      },
+      {
+        "url": "/images/decking-pergola-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 54446,
+        "format": "webp"
+      },
+      {
+        "url": "/images/decking-pergola-1200.avif",
+        "width": 1200,
+        "height": 900,
+        "bytes": 54458,
+        "format": "avif"
+      },
+      {
+        "url": "/images/decking-pergola-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 103038,
+        "format": "webp"
+      },
+      {
+        "url": "/images/decking-pergola-1600.avif",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 87279,
+        "format": "avif"
+      },
+      {
+        "url": "/images/decking-pergola-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 152856,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/decking-pergola-og.jpg",
+    "ogBytes": 145549
+  },
+  "brickwork-on-site": {
+    "original": "IMG_9460.jpg",
+    "originalSha256": "3461b03e734de0f40c0563e2cc5e3d73a58502a3238490ece3c30e3523631e41",
+    "alt": "Brickwork extension under construction beside an existing house",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/IMG_9460.jpg",
+    "variants": [
+      {
+        "url": "/images/brickwork-on-site-480.avif",
+        "width": 480,
+        "height": 513,
+        "bytes": 20130,
+        "format": "avif"
+      },
+      {
+        "url": "/images/brickwork-on-site-480.webp",
+        "width": 480,
+        "height": 513,
+        "bytes": 39692,
+        "format": "webp"
+      },
+      {
+        "url": "/images/brickwork-on-site-800.avif",
+        "width": 800,
+        "height": 855,
+        "bytes": 44292,
+        "format": "avif"
+      },
+      {
+        "url": "/images/brickwork-on-site-800.webp",
+        "width": 800,
+        "height": 855,
+        "bytes": 78674,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/brickwork-on-site-og.jpg",
+    "ogBytes": 127710
+  },
+  "building-exterior": {
+    "original": "IMG_9462.jpg",
+    "originalSha256": "0b7c89d9b74f417f731e4cd78ebb4cb503029a4985595fe2b198e6d5670d5f04",
+    "alt": "Building exterior and garden",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/IMG_9462.jpg",
+    "variants": [
+      {
+        "url": "/images/building-exterior-480.avif",
+        "width": 480,
+        "height": 357,
+        "bytes": 16929,
+        "format": "avif"
+      },
+      {
+        "url": "/images/building-exterior-480.webp",
+        "width": 480,
+        "height": 357,
+        "bytes": 33040,
+        "format": "webp"
+      },
+      {
+        "url": "/images/building-exterior-800.avif",
+        "width": 800,
+        "height": 596,
+        "bytes": 43565,
+        "format": "avif"
+      },
+      {
+        "url": "/images/building-exterior-800.webp",
+        "width": 800,
+        "height": 596,
+        "bytes": 87096,
+        "format": "webp"
+      },
+      {
+        "url": "/images/building-exterior-1200.avif",
+        "width": 1200,
+        "height": 894,
+        "bytes": 87774,
+        "format": "avif"
+      },
+      {
+        "url": "/images/building-exterior-1200.webp",
+        "width": 1200,
+        "height": 894,
+        "bytes": 173442,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/building-exterior-og.jpg",
+    "ogBytes": 183441
+  },
+  "interior-painting": {
+    "original": "65.png",
+    "originalSha256": "e223f85a199215a2a480d75bb70b055b969d6cc1689f430654c33897ad1f6d39",
+    "alt": "Painted green feature wall and finished living room",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/65.png",
+    "variants": [
+      {
+        "url": "/images/interior-painting-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 5839,
+        "format": "avif"
+      },
+      {
+        "url": "/images/interior-painting-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 8398,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/interior-painting-og.jpg",
+    "ogBytes": 51803
+  },
+  "wall-painting": {
+    "original": "8.png",
+    "originalSha256": "a4cbca68d0e912dfd2b9f3f36a9fff21a6930dce57a85edeea2ed2eb3c8f9119",
+    "alt": "Exterior wall painting in progress",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/8.png",
+    "variants": [
+      {
+        "url": "/images/wall-painting-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 9185,
+        "format": "avif"
+      },
+      {
+        "url": "/images/wall-painting-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14560,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/wall-painting-og.jpg",
+    "ogBytes": 56028
+  },
+  "boundary-wall": {
+    "original": "14.png",
+    "originalSha256": "17fa72154dc1ce4c31358185457ce3414694640252198918c68f11955ac8e79e",
+    "alt": "Plastered boundary wall with metal gate",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/14.png",
+    "variants": [
+      {
+        "url": "/images/boundary-wall-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 8300,
+        "format": "avif"
+      },
+      {
+        "url": "/images/boundary-wall-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 12980,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/boundary-wall-og.jpg",
+    "ogBytes": 76859
+  },
+  "pool-concrete": {
+    "original": "24.png",
+    "originalSha256": "053c4baec09d1b5dd6598b1b9d0253e345e44d1a2e1b1395ce1d0e6b6b733ea1",
+    "alt": "Concrete pool structure with pipes and formwork",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/24.png",
+    "variants": [
+      {
+        "url": "/images/pool-concrete-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 9488,
+        "format": "avif"
+      },
+      {
+        "url": "/images/pool-concrete-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14808,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/pool-concrete-og.jpg",
+    "ogBytes": 56084
+  },
+  "concrete-stairs": {
+    "original": "43.png",
+    "originalSha256": "22a33f29a3ee0ba6e8b480b27e4daf321808106214ad6bbcb60d198289961160",
+    "alt": "Concrete staircase under construction",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/43.png",
+    "variants": [
+      {
+        "url": "/images/concrete-stairs-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 10873,
+        "format": "avif"
+      },
+      {
+        "url": "/images/concrete-stairs-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 15574,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/concrete-stairs-og.jpg",
+    "ogBytes": 57444
+  },
+  "floor-screed": {
+    "original": "34.png",
+    "originalSha256": "0fbb6cb1ef84554b4466b04a42f3826980310f3328f506adf37332085a859098",
+    "alt": "Smooth floor screed in a room with large windows",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/34.png",
+    "variants": [
+      {
+        "url": "/images/floor-screed-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 7456,
+        "format": "avif"
+      },
+      {
+        "url": "/images/floor-screed-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10780,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/floor-screed-og.jpg",
+    "ogBytes": 59195
+  },
+  "custom-braai": {
+    "original": "98D254E0-552C-4048-B8EB-F2D90296BB30.jpg",
+    "originalSha256": "f22b08d7c914bec51ac39cff032e844a30f89969fc645c627b538cb7029d1beb",
+    "alt": "Built-in braai with masonry surround",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/98D254E0-552C-4048-B8EB-F2D90296BB30.jpg",
+    "variants": [
+      {
+        "url": "/images/custom-braai-480.avif",
+        "width": 480,
+        "height": 600,
+        "bytes": 9081,
+        "format": "avif"
+      },
+      {
+        "url": "/images/custom-braai-480.webp",
+        "width": 480,
+        "height": 600,
+        "bytes": 14584,
+        "format": "webp"
+      },
+      {
+        "url": "/images/custom-braai-800.avif",
+        "width": 800,
+        "height": 1000,
+        "bytes": 26320,
+        "format": "avif"
+      },
+      {
+        "url": "/images/custom-braai-800.webp",
+        "width": 800,
+        "height": 1000,
+        "bytes": 39640,
+        "format": "webp"
+      },
+      {
+        "url": "/images/custom-braai-1200.avif",
+        "width": 1200,
+        "height": 1500,
+        "bytes": 57612,
+        "format": "avif"
+      },
+      {
+        "url": "/images/custom-braai-1200.webp",
+        "width": 1200,
+        "height": 1500,
+        "bytes": 81472,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/custom-braai-og.jpg",
+    "ogBytes": 101232
+  },
+  "carpentry-kitchen": {
+    "original": "71.png",
+    "originalSha256": "75c6d6ff419f243953f69548a42544d5e3cc9efbccbc3c9c167385a6b501a5ab",
+    "alt": "Kitchen cupboards with a timber countertop",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/71.png",
+    "variants": [
+      {
+        "url": "/images/carpentry-kitchen-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 7843,
+        "format": "avif"
+      },
+      {
+        "url": "/images/carpentry-kitchen-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 13142,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/carpentry-kitchen-og.jpg",
+    "ogBytes": 85019
+  },
+  "decking-detail": {
+    "original": "82.png",
+    "originalSha256": "c26bffcf5d18b570df4eeecbd5af1ef81f4214857d102369945f9600856b21c3",
+    "alt": "Timber pergola framing above an outdoor deck",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/82.png",
+    "variants": [
+      {
+        "url": "/images/decking-detail-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 14828,
+        "format": "avif"
+      },
+      {
+        "url": "/images/decking-detail-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 29878,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/decking-detail-og.jpg",
+    "ogBytes": 112122
+  },
+  "interior-finish": {
+    "original": "IMG_8537-scaled.jpg",
+    "originalSha256": "127c2120799b91ca5a8b1de1ff70e206c85bab74c3bb38fc0a4ab2a1624cf8f6",
+    "alt": "Finished interior with painted walls and ceiling",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/IMG_8537-scaled.jpg",
+    "variants": [
+      {
+        "url": "/images/interior-finish-480.avif",
+        "width": 480,
+        "height": 360,
+        "bytes": 5338,
+        "format": "avif"
+      },
+      {
+        "url": "/images/interior-finish-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 9622,
+        "format": "webp"
+      },
+      {
+        "url": "/images/interior-finish-800.avif",
+        "width": 800,
+        "height": 600,
+        "bytes": 12010,
+        "format": "avif"
+      },
+      {
+        "url": "/images/interior-finish-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 22222,
+        "format": "webp"
+      },
+      {
+        "url": "/images/interior-finish-1200.avif",
+        "width": 1200,
+        "height": 900,
+        "bytes": 23288,
+        "format": "avif"
+      },
+      {
+        "url": "/images/interior-finish-1200.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 43710,
+        "format": "webp"
+      },
+      {
+        "url": "/images/interior-finish-1600.avif",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 36338,
+        "format": "avif"
+      },
+      {
+        "url": "/images/interior-finish-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 67148,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/interior-finish-og.jpg",
+    "ogBytes": 67306
+  },
+  "masonry-detail": {
+    "original": "59.png",
+    "originalSha256": "409f9e8a5c457ab5445a8fcef1ab130b82370de5a937b89e5dd620c923ceeb58",
+    "alt": "Brick-built outdoor braai area",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/59.png",
+    "variants": [
+      {
+        "url": "/images/masonry-detail-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 15815,
+        "format": "avif"
+      },
+      {
+        "url": "/images/masonry-detail-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 27810,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/masonry-detail-og.jpg",
+    "ogBytes": 73222
+  },
+  "pool-work": {
+    "original": "0a03501f-f767-40d6-8c6b-0259148446e1.jpg",
+    "originalSha256": "23acbf326c753aacd1aade58f6282d0458b10fd92842689cab85f4efba6bb416",
+    "alt": "Pool structure during construction",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/0a03501f-f767-40d6-8c6b-0259148446e1.jpg",
+    "variants": [
+      {
+        "url": "/images/pool-work-480.avif",
+        "width": 480,
+        "height": 640,
+        "bytes": 9919,
+        "format": "avif"
+      },
+      {
+        "url": "/images/pool-work-480.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 13868,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/pool-work-og.jpg",
+    "ogBytes": 32126
+  },
+  "cupboard-carpentry": {
+    "original": "48.png",
+    "originalSha256": "64bc21fdab8fb81af74b87435da82e5101991d9f05986e2f303dc590175e2dbd",
+    "alt": "Built-in cupboards and shelving in an interior room",
+    "sourceUrl": "https://regardinconstruction.co.za/wp-content/uploads/2025/02/48.png",
+    "variants": [
+      {
+        "url": "/images/cupboard-carpentry-480.avif",
+        "width": 480,
+        "height": 480,
+        "bytes": 5399,
+        "format": "avif"
+      },
+      {
+        "url": "/images/cupboard-carpentry-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 7146,
+        "format": "webp"
+      }
+    ],
+    "og": "/images/cupboard-carpentry-og.jpg",
+    "ogBytes": 34722
+  }
+}

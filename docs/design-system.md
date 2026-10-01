@@ -1,9 +1,9 @@
-# Proposed design system
+# Construction website design system
 
-Charcoal #1e1f1c, limestone #e9e4da, paper #f7f5f0, dark terracotta #a1432e. Dark terracotta replaces the lighter reference accent for legible small text and CTA contrast.
+The existing Regardin logo anchors the white and green brand palette: forest ink #15291f, green #006644, pale stone #eef2ee and white. DM Sans provides clear, substantial headings and readable body text; fonts are self-hosted with swap and critical-face preloads.
 
-Bodoni Moda brings an architectural editorial rhythm to headings; DM Sans provides readable body text. Considered alternatives for owner review: IBM Plex Sans for a more utilitarian tone, or Source Serif 4 for a quieter classic tone. Current faces are self-hosted from pinned Fontsource packages with font-display swap.
+The homepage opens with a full-width photograph of timber decking and a pergola from the source portfolio. A building-extension photograph introduces the company; seven photographic service cards and a six-image portfolio section show the range of work. The portfolio page presents all 16 selected photographs. Every service page includes relevant source photography and specific scope descriptions.
 
-Asymmetric desktop hero, material studies, ruled service rows, generous gutters, square buttons and restrained interaction. The wordmark is a proposed typographic treatment; it is not presented as an approved logo. No fake badges, statistics, work photographs or client project data.
+Responsive AVIF/WebP variants retain natural aspect ratios, strip embedded metadata and avoid enlarging originals. Captions describe visible work without inventing client names, locations, dates or outcomes. The image manifest records source URLs and original hashes. The user authorised source-image reuse for this redesign on 01/10/2026; independent ownership verification remains a production review item.
 
-`/styleguide/` demonstrates colour, typography, buttons and disclosure components. Automated contrast checks cover all routes. Motion respects reduced-motion preferences.
+The restored wordmark is derived from the source-site logo, not a substitute typographic mark. The interface uses clear quote/contact links, square buttons, quiet borders and a responsive keyboard-accessible menu. Motion respects reduced-motion preferences. Automated contrast checks cover all 22 routes.

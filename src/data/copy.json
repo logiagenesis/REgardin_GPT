@@ -1,0 +1,166 @@
+{
+  "home": {
+    "eyebrow": "REGARDIN CONSTRUCTION · CAPE TOWN",
+    "heroHeadline": "Construction & renovations in Cape Town.",
+    "heroLines": ["Construction &", "renovations", "in Cape Town."],
+    "heroBody": "From boundary walls and property renovations to hardwood decking and the final coat of paint. Building and finishing work for homes and businesses, with one team to bring the details together.",
+    "heroPrimary": "Request a quote",
+    "heroSecondary": "See our work",
+    "heroFootnote": "BRICKWORK · TIMBER · CONCRETE · FINISHES",
+    "introEyebrow": "BUILDING, RENOVATING & FINISHING",
+    "introHeading": "From the first wall to the finishing details.",
+    "introLead": "A new doorway. A renovated room. A deck that makes the garden part of your home.",
+    "introBody": "Regardin Construction is based in Kensington, Cape Town. We undertake residential and commercial building, renovations and maintenance, with work spanning brickwork, painting, timber structures, concrete and custom designs. Our services also cover new homes, garden hardscaping and civil projects.",
+    "introLink": "About Regardin",
+    "servicesEyebrow": "WHAT WE DO",
+    "servicesHeading": "Building work for your next project.",
+    "servicesBody": "Choose the work you have in mind, from property alterations to painting, decking and concrete.",
+    "projectsEyebrow": "OUR WORK",
+    "projectsHeading": "Walls built. Rooms renewed. Outdoor spaces made useful.",
+    "projectsBody": "Explore construction and finishing photographs from Regardin’s existing portfolio: painting, boundary walls, decking, plastering, concrete and carpentry.",
+    "projectsLink": "View the portfolio",
+    "reviewsEyebrow": "WHAT CLIENTS SAY",
+    "reviewsHeading": "Homeowners describe the difference.",
+    "additionalScopes": [
+      "New homes",
+      "Garden hardscaping",
+      "Civil projects",
+      "Property maintenance"
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT REGARDIN CONSTRUCTION",
+    "heading": "Building work. Finishing details. One team.",
+    "intro": "Residential and commercial construction, renovation and maintenance in Cape Town.",
+    "sectionHeading": "Practical skills for the whole project.",
+    "paragraphs": [
+      "Regardin Construction is based in Kensington, Cape Town, providing residential and commercial building, renovations and maintenance. Our services span brickwork, painting, decking, timber structures, concrete and custom designs, alongside new homes, garden hardscaping and civil projects. That range matters when the walls, surfaces and finishing work all need to come together.",
+      "Our work includes boundary walls, second-floor additions and doorway changes, as well as timber pergolas, hardwood decks, driveways, slabs and pool structures. The portfolio shows the finer details too, from painting and floor screeds to walk-in closets and concrete countertops. Whether you are changing a room or planning a larger build, start with what your property needs."
+    ],
+    "primaryLink": "Explore our services",
+    "secondaryLink": "See the portfolio"
+  },
+  "cta": {
+    "eyebrow": "YOUR NEXT BUILDING PROJECT",
+    "heading": "What would you like to build or change?",
+    "body": "Tell us about your property, the work you need and your location. Add photographs or plans if you have them, or call Regard to talk it through.",
+    "primary": "Request a quote",
+    "secondary": "Call Regard"
+  },
+  "serviceHub": {
+    "eyebrow": "CONSTRUCTION & FINISHING SERVICES",
+    "heading": "From brickwork to the final finish.",
+    "body": "Renovations, boundary walls, painting, carpentry, decking, concrete and custom work for Cape Town homes and businesses. Find the service that fits your project and see examples from the existing portfolio.",
+    "scopeEyebrow": "THE WORK WE DO",
+    "scopeHeading": "What your project can include.",
+    "scopeNote": "The quote sets out the work, materials and exclusions agreed for your property.",
+    "serviceCta": "Request a quote for this work"
+  },
+  "projects": {
+    "eyebrow": "REGARDIN CONSTRUCTION PORTFOLIO",
+    "heading": "See the work behind the services.",
+    "body": "Painting, masonry, timber and concrete work from Regardin’s existing website. Browse the photographs to find work relevant to your own property.",
+    "galleryHeading": "Construction, renovation & finishing work",
+    "galleryNote": "Photographs from the existing Regardin portfolio. Individual project locations and specifications are not added where the source does not provide them.",
+    "cta": "Talk to us about similar work"
+  },
+  "process": {
+    "eyebrow": "PLAN YOUR PROJECT",
+    "heading": "Start with the work your property needs.",
+    "body": "A few useful details help turn an idea into a clear project discussion. Share the space, the changes you want and any photographs or plans.",
+    "steps": [
+      {
+        "title": "Tell us what needs doing",
+        "body": "Describe the building, renovation or finishing work, and give the property location."
+      },
+      {
+        "title": "Show the existing space",
+        "body": "Send photographs, approximate dimensions and drawings if available. Include the areas that need attention."
+      },
+      {
+        "title": "Agree the work before it starts",
+        "body": "Discuss the scope, materials, access, timing and payment terms. Put the inclusions and exclusions in writing."
+      }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "CLIENT TESTIMONIALS",
+    "heading": "Their homes. Their projects. Their words.",
+    "body": "Read the experiences shared by Regardin clients on the existing website.",
+    "homeSource": "Client testimonial from the existing Regardin website"
+  },
+  "contact": {
+    "eyebrow": "REQUEST A CONSTRUCTION QUOTE",
+    "heading": "Tell us about your next project.",
+    "body": "A renovation, a new wall, a timber deck or finishing work. Share what you need and where the property is, or call Regard directly.",
+    "detailsHeading": "Contact Regardin Construction"
+  },
+  "footer": {
+    "description": "Construction, renovations and finishing work for Cape Town homes and businesses.",
+    "servicesLabel": "Building & finishing services",
+    "portfolioLabel": "Our portfolio",
+    "contactHeading": "Discuss your project",
+    "contactLink": "Request a quote"
+  },
+  "provenance": {
+    "retrievalDate": "2026-10-01",
+    "sources": [
+      {
+        "url": "https://regardinconstruction.co.za/",
+        "archive": "research/live-site/pages.json; research/live-site/rendered-000.txt; original live homepage footer",
+        "supports": [
+          "Residential and commercial construction",
+          "Renovations and maintenance",
+          "Timber pergolas and hardwood decks",
+          "Driveways, slabs and pool structures",
+          "Kensington, Cape Town contact location",
+          "Garden hardscaping",
+          "New homes",
+          "Civil projects"
+        ]
+      },
+      {
+        "url": "https://regardinconstruction.co.za/about-us/",
+        "archive": "research/live-site/pages.json; research/live-site/rendered-002.txt",
+        "supports": [
+          "Brickwork, renovations, painting, decking, timber structures, concrete and custom designs",
+          "New wall, second floor and backyard construction",
+          "One team across building and finishing work"
+        ]
+      },
+      {
+        "url": "https://regardinconstruction.co.za/our-services/",
+        "archive": "research/live-site/pages.json; research/live-site/rendered-011.txt",
+        "supports": [
+          "Boundary walls, second floors and doorway changes",
+          "Feature wall and entire-property painting",
+          "Custom timber pergolas and hardwood decks",
+          "Driveways, custom slabs and pool structures",
+          "Imagination Creation custom design service"
+        ]
+      },
+      {
+        "url": "https://regardinconstruction.co.za/our-portfolio/",
+        "archive": "research/live-site/pages.json; research/live-site/rendered-010.txt",
+        "supports": [
+          "Pool plastering",
+          "Scratch plaster",
+          "Floor screeds",
+          "Concrete stairs",
+          "Walk-in closets",
+          "Countertops",
+          "Decking",
+          "Patio building",
+          "Concrete walls"
+        ]
+      }
+    ],
+    "editorialNotes": [
+      "Testimonials remain unchanged in testimonials.json.",
+      "Original service scopes are retained in concrete customer language.",
+      "Experience duration, guaranteed timelines, warranties and pricing promises are not added.",
+      "Quote language does not assert a free quote or guaranteed response time.",
+      "Preparation and agreement steps are customer guidance rather than claims of a verified company procedure."
+    ]
+  }
+}

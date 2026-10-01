@@ -12,3 +12,7 @@ No production release, custom-domain cutover or delivered-mail result is claimed
 ## cPanel target correction
 
 User explicitly confirmed cPanel and rejected the previous hosting assumption. The next pushed release contains releases/regardin-cpanel-preview.zip, its checksum, Apache/PHP backend and corrected instructions. Local validation: 33 browser and 21 unit/integration checks; no public upload or cutover. cPanel account access, actual PHP capabilities, Apache/HTTPS and mailbox delivery remain unverified. The attached master document is preserved unchanged; the direct user instruction takes precedence.
+
+## Photographic construction rebuild
+
+Rebuilt main around 16 source photographs, the restored source logo and specialist copywriting grounded in archived services. Updated responsive image derivatives, loaded screenshots, cPanel ZIP/checksum and GitHub preview assets. Local validation: 34 browser checks, 21 unit/PHP/integration checks, 22 route build/HTML/link gates and mobile Lighthouse performance 100 on four representative routes with CLS 0. Commit identity and remote SHA are provided in the push receipt; deployment status is checked separately after push.

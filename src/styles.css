@@ -39,13 +39,13 @@
 }
 
 :root {
-  --ink: #1e1f1c;
-  --paper: #f7f5f0;
-  --stone: #e9e4da;
-  --accent: #a1432e;
-  --muted: #64645b;
-  --line: #c9c4b9;
-  --serif: 'Bodoni Moda', georgia, serif;
+  --ink: #15291f;
+  --paper: #fff;
+  --stone: #eef2ee;
+  --accent: #064;
+  --muted: #526158;
+  --line: #d2dcd5;
+  --serif: 'DM Sans', arial, sans-serif;
   --sans: 'DM Sans', arial, sans-serif;
   --gutter: clamp(24px, 5.4vw, 104px);
 }
@@ -111,9 +111,9 @@ p {
 h1,
 h2,
 h3 {
-  font-weight: 400;
   margin: 0;
   line-height: 1.13;
+  font-weight: 600;
 }
 
 h1,
@@ -220,8 +220,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 112px;
   gap: 25px;
+  min-height: 96px;
 }
 
 .brand {
@@ -769,8 +769,8 @@ img {
 }
 
 .cta-inner h2 {
-  font-size: clamp(48px, 5.8vw, 87px);
   line-height: 1.06;
+  font-size: clamp(38px, 4.3vw, 65px);
 }
 
 .cta-inner > div {
@@ -811,6 +811,8 @@ footer {
 
 .footer-brand {
   margin-bottom: 25px;
+  background: white;
+  padding: 14px 18px;
 }
 
 .footer-grid p {
@@ -883,18 +885,19 @@ footer {
 }
 
 .page-heading {
-  padding-top: 85px;
-  padding-bottom: 70px;
   border-bottom: 1px solid var(--line);
+  padding-top: 65px;
+  padding-bottom: 38px;
 }
 
 .page-heading .lead {
-  max-width: 650px;
   margin-top: 35px;
   margin-bottom: 0;
+  max-width: 850px;
 }
 
 .page-heading h1 {
+  font-size: clamp(38px, 5.1vw, 70px);
   max-width: 1100px;
 }
 
@@ -2347,5 +2350,390 @@ dialog p {
 
   .no-js .site-header nav .nav-contact {
     border-bottom: 0;
+  }
+}
+
+/* Construction website: source photography and the existing green identity. */
+
+.source-logo {
+  display: block;
+  width: 225px;
+  height: auto;
+}
+
+.construction-hero {
+  position: relative;
+  min-height: 670px;
+  background: #15291f;
+  color: white;
+  isolation: isolate;
+}
+
+.construction-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.construction-hero-photo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 65% 55%;
+}
+
+.construction-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgb(9 23 17 / 92%) 0%,
+    rgb(9 23 17 / 77%) 40%,
+    rgb(9 23 17 / 16%) 100%
+  );
+}
+
+.construction-hero-content {
+  padding-top: 80px;
+  padding-bottom: 44px;
+}
+
+.construction-hero .eyebrow {
+  color: #c1f1d4;
+}
+
+.construction-hero h1 {
+  color: white;
+  font-size: clamp(46px, 5.4vw, 82px);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  max-width: 800px;
+  margin-top: 24px;
+}
+
+.construction-hero-body {
+  font-size: 19px;
+  max-width: 590px;
+  margin: 26px 0;
+}
+
+.construction-hero .button {
+  background: #bff2d5;
+  border-color: #bff2d5;
+  color: #15291f;
+  min-height: 54px;
+}
+
+.construction-hero .construction-outline {
+  color: white;
+  background: transparent;
+  border-color: white;
+}
+
+.construction-hero .button:hover {
+  background: white;
+  color: #15291f;
+}
+
+.construction-hero-caption {
+  font-size: 12px;
+  color: #e0ebe4;
+  margin: 42px 0 0;
+}
+
+.construction-band {
+  background: #064;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.construction-band .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+.construction-intro {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 75px;
+  align-items: center;
+  padding-top: 88px;
+  padding-bottom: 70px;
+}
+
+.construction-intro > picture img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+.construction-intro h2 {
+  font-size: clamp(32px, 3.4vw, 50px);
+  margin-bottom: 24px;
+}
+
+.scope-tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 8px;
+  margin: 28px 0 0;
+}
+
+.scope-tags li {
+  background: var(--stone);
+  font-size: 12px;
+  padding: 8px 12px;
+  color: var(--ink);
+}
+
+.construction-section {
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.construction-section h2,
+.construction-work h2,
+.review-section h2,
+.planning h2 {
+  font-size: clamp(32px, 3.6vw, 52px);
+  max-width: 800px;
+}
+
+.construction-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.construction-service {
+  display: block;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.construction-service > picture {
+  display: block;
+  overflow: hidden;
+}
+
+.construction-service img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s;
+}
+
+.construction-service:hover img {
+  transform: scale(1.025);
+}
+
+.construction-service > div {
+  padding: 23px 24px;
+}
+
+.construction-service h3 {
+  color: var(--ink);
+  font-size: 23px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.construction-service p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.service-more {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.construction-work {
+  padding: 75px 0;
+  background: var(--stone);
+}
+
+.construction-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.construction-gallery figure {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+}
+
+.construction-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.construction-gallery figcaption {
+  font-size: 14px;
+  padding: 15px 18px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.construction-detail-photo picture {
+  display: block;
+}
+
+.construction-detail-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+  object-fit: cover;
+}
+
+.construction-detail-photo figcaption {
+  padding: 12px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.construction-scope {
+  margin-top: 65px;
+  max-width: 900px;
+}
+
+.construction-scope h2 {
+  margin-bottom: 24px;
+}
+
+.cta-phone {
+  display: block;
+  padding-top: 24px;
+  color: white;
+}
+
+@media (width <= 1000px) {
+  .construction-services,
+  .construction-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .construction-intro {
+    gap: 36px;
+  }
+
+  .construction-intro > picture img {
+    height: 450px;
+  }
+
+  .construction-band .wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .source-logo {
+    width: 185px;
+  }
+}
+
+@media (width <= 600px) {
+  .header-inner {
+    min-height: 80px;
+  }
+
+  .source-logo {
+    width: 180px;
+  }
+
+  .construction-hero {
+    min-height: 660px;
+  }
+
+  .construction-hero-content {
+    padding-top: 55px;
+    padding-bottom: 36px;
+  }
+
+  .construction-hero::before {
+    background: rgb(9 23 17 / 79%);
+  }
+
+  .construction-hero h1 {
+    font-size: clamp(43px, 11.5vw, 65px);
+  }
+
+  .construction-hero-body {
+    font-size: 17px;
+  }
+
+  .construction-hero .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .construction-band .wrap {
+    display: grid;
+    justify-content: start;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .construction-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 48px;
+    padding-bottom: 30px;
+  }
+
+  .construction-intro > picture img {
+    height: 420px;
+  }
+
+  .construction-services,
+  .construction-gallery {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .construction-section,
+  .construction-work {
+    padding-top: 50px;
+    padding-bottom: 55px;
+  }
+
+  .construction-section .section-header,
+  .construction-work .section-header {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .construction-section .section-header > p,
+  .construction-work .section-header > p {
+    margin-top: 18px;
+  }
+
+  .construction-detail-photo img {
+    max-height: 450px;
+  }
+
+  .construction-service h3 {
+    font-size: 24px;
   }
 }

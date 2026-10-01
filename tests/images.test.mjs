@@ -55,6 +55,18 @@ test('image pipeline strips metadata, emits responsive formats and excludes unap
     assert.equal(og.width, 1200);
     assert.equal(og.height, 630);
     assert.equal(og.exif, undefined);
+    // A clean CI checkout has derivatives but deliberately has no private originals.
+    await rm(raw);
+    execFileSync(process.execPath, ['scripts/images.mjs'], {
+      env: {
+        ...process.env,
+        REGARDIN_IMAGE_MANIFEST: manifest,
+        REGARDIN_IMAGE_OUTPUT: output,
+        REGARDIN_IMAGE_INDEX: index,
+      },
+      stdio: 'pipe',
+    });
+    assert.deepEqual(JSON.parse(await readFile(index, 'utf8')), entries);
   } finally {
     await rm(raw, { force: true });
     await rm(temp, { recursive: true, force: true });

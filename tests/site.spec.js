@@ -1,6 +1,25 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { routes } from '../src/render.js';
+
+async function loadPhotographs(page) {
+  return page.locator('img').evaluateAll(async (images) => {
+    images.forEach((image) => {
+      image.loading = 'eager';
+    });
+    return Promise.all(
+      images.map(async (image) => {
+        try {
+          await image.decode();
+        } catch {
+          return image.currentSrc || image.src;
+        }
+        return image.naturalWidth > 0 ? null : image.currentSrc || image.src;
+      }),
+    ).then((results) => results.filter(Boolean));
+  });
+}
+
 for (const route of routes) {
   test(`${route.path}: content, links and accessibility`, async ({ page }) => {
     const errors = [];
@@ -23,6 +42,7 @@ for (const width of [360, 390, 768, 1024, 1440, 1920]) {
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true);
+    expect(await loadPhotographs(page)).toEqual([]);
     await page.screenshot({ path: `test-results/home-${width}.png`, fullPage: true });
   });
 }
@@ -132,4 +152,22 @@ test('all routes remain readable without JavaScript', async ({ browser }) => {
   await page.goto('http://127.0.0.1:5173/contact/');
   await expect(page.locator('main a[href^="mailto:"]').first()).toBeVisible();
   await context.close();
+});
+
+test('source photographs load throughout the portfolio and service pages', async ({ page }) => {
+  const photoRoutes = routes.filter(
+    (route) =>
+      route.path === '/' ||
+      route.path === '/about/' ||
+      route.path.startsWith('/services/') ||
+      route.path.startsWith('/projects/'),
+  );
+  for (const route of photoRoutes) {
+    await page.goto(route.path);
+    expect(await page.locator('main picture img').count()).toBeGreaterThan(0);
+    expect(await loadPhotographs(page), route.path).toEqual([]);
+    await expect(page.locator('main svg.drawing')).toHaveCount(0);
+  }
+  await page.goto('/projects/');
+  await expect(page.locator('main picture img')).toHaveCount(16);
 });
