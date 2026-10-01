@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "renovations-alterations",
+    "title": "Renovations & alterations",
+    "short": "A new chapter for an existing space.",
+    "description": "Renovation and alteration work changes how an existing building looks or functions. Tell us which spaces you want to adapt and what you need them to do.",
+    "items": [
+      "Room alterations and renovation work",
+      "Brickwork, plastering and finishing",
+      "Coordination of the work within your brief"
+    ],
+    "consideration": "For structural changes, establish the design and approval requirements before work begins. Send any available plans with your enquiry.",
+    "drawing": "space"
+  },
+  {
+    "slug": "brickwork-boundary-walls",
+    "title": "Brickwork & boundary walls",
+    "short": "Structure, definition and a considered finish.",
+    "description": "Brickwork forms walls, openings and other masonry elements. Share the location, approximate dimensions and the finish you have in mind.",
+    "items": ["Boundary wall enquiries", "Masonry alterations and openings", "Plastered finishes"],
+    "consideration": "Wall height, foundations, property boundaries and structural requirements need to be assessed for the specific site.",
+    "drawing": "wall"
+  },
+  {
+    "slug": "painting",
+    "title": "Interior & exterior painting",
+    "short": "The finishing layer that changes a space.",
+    "description": "Painting refreshes and protects interior and exterior surfaces. A useful brief includes the surface condition, access and the areas to be painted.",
+    "items": [
+      "Interior wall and ceiling painting",
+      "Exterior painting",
+      "Surface preparation within the agreed scope"
+    ],
+    "consideration": "Damp, loose coatings and cracks need assessment before a coating system is selected. Photograph the affected areas as well as the whole surface.",
+    "drawing": "finish"
+  },
+  {
+    "slug": "carpentry-decking-pergolas",
+    "title": "Carpentry, decking & pergolas",
+    "short": "Timber work, from inside to out.",
+    "description": "Carpentry, decking and pergola work brings timber elements into indoor and outdoor spaces. Describe the intended use, approximate size and existing conditions.",
+    "items": ["Carpentry enquiries", "Timber decking", "Timber pergolas"],
+    "consideration": "Timber selection, exposure, fixings and ongoing maintenance should be agreed for your project. Any supporting structure needs assessment.",
+    "drawing": "timber"
+  },
+  {
+    "slug": "concrete-work",
+    "title": "Concrete work",
+    "short": "Solid foundations. Deliberate details.",
+    "description": "Concrete work includes slabs, driveways, stairs and other formed elements. Share drawings if you have them and describe how the finished area will be used.",
+    "items": ["Driveways and slabs", "Concrete stairs", "Pool-structure enquiries"],
+    "consideration": "Ground conditions, drainage, reinforcement and curing requirements depend on the design and site. Structural elements need appropriate design input.",
+    "drawing": "steps"
+  },
+  {
+    "slug": "plastering-screeds-pool-plastering",
+    "title": "Plastering, screeds & pool finishes",
+    "short": "A sound surface for what comes next.",
+    "description": "Plastering and screed work prepare or finish wall and floor surfaces. Pool-plastering enquiries should include photographs of the existing finish and any visible defects.",
+    "items": ["Wall plastering", "Floor screeds", "Pool plastering enquiries"],
+    "consideration": "The substrate, moisture conditions and intended finish affect the preparation and material choice. Final scope follows assessment.",
+    "drawing": "finish"
+  },
+  {
+    "slug": "custom-projects",
+    "title": "Custom projects",
+    "short": "For the work that needs its own approach.",
+    "description": "Custom work starts with a specific brief. Tell us what you want to make or change, the available space and any drawings or references you already have.",
+    "items": [
+      "Bespoke construction enquiries",
+      "Details that combine different trades",
+      "Project-specific scope discussions"
+    ],
+    "consideration": "Feasibility, specialist input and the work included in a quote need to be established before construction.",
+    "drawing": "space"
+  }
+]

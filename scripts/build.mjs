@@ -1,0 +1,62 @@
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { build } from 'vite';
+import { routes, render } from '../src/render.js';
+import business from '../src/data/business.json' with { type: 'json' };
+const mode = process.env.SITE_MODE || 'preview';
+if (
+  mode === 'production' &&
+  (!business.contactApproved || !business.photographyApproved || !business.legalApproved)
+)
+  throw new Error(
+    'Production blocked: contact, photography and legal approval are required. Use npm run build for the design preview.',
+  );
+await rm('.generated', { recursive: true, force: true });
+for (const r of routes) {
+  const path = resolve(
+    '.generated',
+    r.path === '/'
+      ? 'index.html'
+      : r.path.endsWith('.html')
+        ? r.path.slice(1)
+        : r.path.slice(1) + 'index.html',
+  );
+  await mkdir(resolve(path, '..'), { recursive: true });
+  await writeFile(path, render(r, mode));
+}
+await build();
+await writeFile(
+  'dist/robots.txt',
+  mode === 'production'
+    ? 'User-agent: *\nAllow: /\nSitemap: ' + business.url + '/sitemap.xml\n'
+    : 'User-agent: *\nDisallow: /\n',
+);
+await writeFile(
+  'dist/sitemap.xml',
+  '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
+    routes
+      .filter((r) => !r.noindex && !['privacy', 'terms'].includes(r.kind))
+      .map((r) => `<url><loc>${business.url}${r.path}</loc></url>`)
+      .join('') +
+    '</urlset>',
+);
+await writeFile(
+  'dist/_headers',
+  `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://challenges.cloudflare.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'\n${mode === 'production' ? '' : '  X-Robots-Tag: noindex, nofollow\n'}`,
+);
+if (mode === 'production') {
+  for (const r of routes) {
+    const p =
+      'dist/' +
+      (r.path === '/'
+        ? 'index.html'
+        : r.path.endsWith('.html')
+          ? r.path.slice(1)
+          : r.path.slice(1) + 'index.html');
+    if ((await readFile(p, 'utf8')).includes('[CONFIRM'))
+      throw new Error('Production contains unconfirmed content: ' + r.path);
+  }
+}
+console.log(
+  `Built ${routes.length} routes in ${mode} mode. Production release remains approval-gated.`,
+);
