@@ -26,3 +26,17 @@ Live preview, production deployment and delivered-mail verification are unrun; t
 
 - Backend push audit: build, lint, HTML, internal links, 30 browser checks and 13 SQL/API checks pass. Lighthouse rerun passes required performance/accessibility/best-practice thresholds; preview crawlability remains the expected SEO warning.
 - A direct Lighthouse CLI attempt failed because Chromium was launched without headless mode; the configured Lighthouse CI runner was rerun successfully. No result from the failed run is used.
+
+## Source, project and integration release
+
+- 22-route build, lint, HTML and metadata/internal-link/content checks pass. All 33 browser tests passed before the font change. A subsequent run hit a Vite reload during axe evaluation while generated files were being updated: 32 passed, one execution-context interruption. A clean rerun is required and recorded below; no accessibility assertion was bypassed.
+- 18 unit checks include real SQLite schema, signed-link expiry/tampering, operator authorisation, safe downloads, approved-only responsive image processing, notification/upload race and interrupted-upload recovery. External providers are test doubles; account delivery remains unverified.
+- Final Lighthouse scores: home 100/100/100/66, contact 100/100/96/66, renovations 100/100/100/66, project layout 99/100/100/66. Order: performance/accessibility/best practices/SEO. Required local thresholds pass; preview crawlability warning remains intentionally visible.
+- Performance defect: homepage late font load caused CLS 0.225 and performance 88. Self-hosted critical-font preload reduces CLS to 0 and performance rises to 100. Project template CLS 0.071 remains below 0.1.
+- Backend defects corrected: undersized signing/operator keys no longer count as configured; notification waits for uploads and marks interrupted uploads incomplete after five minutes instead of prematurely emailing without links.
+- Cloudflare Functions bundle compiled successfully. Production build correctly fails on missing contact/photo/legal approvals. Wrangler identity operation reports unauthenticated. No public-host, mailbox, Google account or production result claimed.
+- Setup script npm ci --ignore-scripts/build/check executed successfully. Dependency installation reports upstream dev-tool deprecations; Vite build has no warnings. Saved setup/start configuration and credential requirements confirmed by configuration tool.
+- Sources: 44 old URLs archived/rendered (one rendered 503), 100 original media downloads reviewed, nine audits read, 20 raw competitor homepage responses checked (one 403, two JS shells). Source certificate handling used verified curl mediation; TLS was not disabled.
+- GitHub Actions added; its actual remote result remains to be inspected after push. Launch blockers and unmet JS-free form/photo-led/share-preview requirements are explicit in HANDOVER.md.
+
+- Clean browser rerun after generated-file writes completed: 33 passed, zero axe violations. Final unit suite: 18 passed. Font-face spacing lint corrections are formatting only; no assertion settings were relaxed.

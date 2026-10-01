@@ -5,17 +5,40 @@
       "url": [
         "http://localhost/",
         "http://localhost/contact/",
-        "http://localhost/services/renovations-alterations/"
+        "http://localhost/services/renovations-alterations/",
+        "http://localhost/projects/project-preview/"
       ],
       "numberOfRuns": 1,
-      "settings": { "chromeFlags": "--no-sandbox" }
+      "settings": {
+        "chromeFlags": "--no-sandbox"
+      }
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.9 }],
-        "categories:accessibility": ["error", { "minScore": 1 }],
-        "categories:best-practices": ["error", { "minScore": 0.95 }],
-        "categories:seo": ["warn", { "minScore": 1 }]
+        "categories:performance": [
+          "error",
+          {
+            "minScore": 0.9
+          }
+        ],
+        "categories:accessibility": [
+          "error",
+          {
+            "minScore": 1
+          }
+        ],
+        "categories:best-practices": [
+          "error",
+          {
+            "minScore": 0.95
+          }
+        ],
+        "categories:seo": [
+          "warn",
+          {
+            "minScore": 1
+          }
+        ]
       }
     }
   }

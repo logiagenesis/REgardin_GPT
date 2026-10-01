@@ -1,10 +1,10 @@
 claim,source,retrieval_date,status,notes
-"Regardin Construction","Supplied master prompt section 6.2","01/10/2026","published-claim","Document records live verification on 30/09/2026; independent retrieval blocked"
-"Kensington Cape Town","Supplied master prompt section 6.2","01/10/2026","published-claim","No street address published"
-"+27 79 454 9780","Supplied master prompt section 6.2","01/10/2026","published-claim","Owner approval pending"
-"regardbothma@icloud.com","Supplied master prompt section 6.2","01/10/2026","published-claim","Conflict with domain mailbox unresolved; preview only"
-"Service categories","Supplied master prompt sections 6.2 and 7","01/10/2026","published-claim","No fixed package inclusions or specialist services promised"
-"Tarah Leonard testimonial","Supplied master prompt section 6.3","01/10/2026","published-claim","Exact excerpt; publication permission pending"
-"Beverley Kolbe testimonial","Supplied master prompt section 6.3","01/10/2026","published-claim","Exact excerpt; publication permission pending"
-"Concept illustrations","Original SVG drawings in src/render.js","01/10/2026","proposed","Not project photographs; clearly labelled"
-"Palette and wordmark","Master prompt fallback direction; proposed implementation","01/10/2026","proposed","Brand approval pending"
+Regardin Construction,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+Kensington Cape Town,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
++27 79 454 9780,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+regardbothma@icloud.com,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+Service categories,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+Tarah Leonard testimonial,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+Beverley Kolbe testimonial,https://regardinconstruction.co.za/ and archived WordPress pages; supplied master prompt,01/10/2026,verified-live,TLS-verified retrieval on 01/10/2026; publication is not independent verification of business fact or permission
+Concept illustrations,Original SVG drawings in src/render.js,01/10/2026,proposed,Not project photographs; clearly labelled
+Palette and wordmark,Master prompt fallback direction; proposed implementation,01/10/2026,proposed,Brand approval pending

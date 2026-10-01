@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "slug": "project-preview",
+    "title": "Project layout preview",
+    "approved": false,
+    "template": true,
+    "service": "renovations-alterations",
+    "suburb": null,
+    "year": null,
+    "brief": null,
+    "scope": null,
+    "constraints": null,
+    "materials": null,
+    "duration": null,
+    "hero": null,
+    "before": null,
+    "after": null
+  }
+]

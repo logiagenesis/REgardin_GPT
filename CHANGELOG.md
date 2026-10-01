@@ -1,3 +1,7 @@
+# 0.3 — Source reconciliation and release tooling
+
+Added the project-page layout, responsive approved-image pipeline, expiring private attachment links, disabled consent integration, font preloads, GitHub QA workflow, source/competitor inventories, migration map and Google/social planning packs. Recovered interrupted uploads before notification. No public deployment or account activation.
+
 # Changelog
 
 ## 0.1.0 — 01/10/2026

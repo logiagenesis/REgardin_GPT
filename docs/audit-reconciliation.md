@@ -1,0 +1,21 @@
+# Audit reconciliation — 01/10/2026
+
+The attached Rev 2 master prompt governs this build; earlier audit prompts conflict on repository, stack, branch and claims. The user confirmed `REgardin_GPT`. The implementation uses Vite/static HTML/CSS/vanilla JS and main as a preview branch, as required by the latest brief.
+
+| Prior finding                                                    | Current evidence                                                                                      | Decision                                                                   |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| The site is one page                                             | Current WP sitemap lists eight children and 44 URLs; all were archived                                | Reject single-page conclusion                                              |
+| Images originate on Genspark                                     | Current media API returns original Regardin-domain sources; 100 recent candidate originals downloaded | Use first-party origins; reject crawler substituted URLs                   |
+| No service text                                                  | Raw/API service content exists; current homepage includes service descriptions                        | Rewrite into useful service destinations                                   |
+| Contact cannot be retrieved                                      | Current homepage independently confirms telephone, iCloud email and Kensington base                   | Preview uses those values; owner approval and mailbox choice still pending |
+| All headers have broken call/email                               | Standalone template and normal homepage are different contexts                                        | Do not generalise standalone template defects                              |
+| Two testimonials may be rewritten                                | Current source wording retains the original phrasing                                                  | Faithful excerpts only; no added stars, dates or Google attribution        |
+| Every project is owner managed / all trades in-house             | No supplied approved operational evidence                                                             | Omit claims                                                                |
+| Registration, insurance and fixed warranties are safe to publish | No current approved records                                                                           | Omit claims                                                                |
+| Renovations are always exempt from NHBRC                         | Latest prompt rejects that evergreen legal claim                                                      | No exemption advice published; specialist/legal review needed              |
+| Reviews prove advertising spend                                  | They do not establish spend, profitability or current campaigns                                       | Separate website review claims from Ads evidence                           |
+| FAQ markup earns rich results / self-hosted reviews earn stars   | Latest prompt rejects these promises                                                                  | Useful FAQs and matching schema; no AggregateRating/Review workaround      |
+| Raw originals should be committed                                | Latest prompt requires private ignored originals and confirmed permissions                            | Originals, audits and contact sheet stay ignored                           |
+| Astro or a framework is required                                 | Latest prompt sets the house standard as Vite/static/vanilla                                          | Follow latest stack direction                                              |
+
+Raw HTML/REST archives and original documents remain in `research/`, outside the public Git history. Source retrieval is not a WordPress database backup and does not prove form delivery, account ownership or photo permission.

@@ -1,4 +1,8 @@
+import { initialiseTracking, trackEvent } from './tracking.js';
+import tracking from './data/tracking.json' with { type: 'json' };
 import './styles.css';
+document.documentElement.classList.remove('no-js');
+initialiseTracking(tracking);
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 menu?.addEventListener('click', () => {
@@ -93,6 +97,11 @@ if (form) {
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'The enquiry could not be saved.');
+      if (!result.duplicate) {
+        trackEvent('generate_lead', { service: form.elements.service.value });
+        if (result.uploadStatus === 'complete')
+          trackEvent('file_upload', { count: form.elements.photos.files.length });
+      }
       sessionStorage.setItem('regardin-receipt', result.receipt);
       sessionStorage.setItem('regardin-upload-status', result.uploadStatus || 'none');
       window.location.href = '/thank-you/';
@@ -126,4 +135,13 @@ if (receiptStatus) {
     sessionStorage.removeItem('regardin-upload-status');
     sessionStorage.removeItem('regardin-receipt');
   }
+}
+for (const comparison of document.querySelectorAll('[data-comparison]')) {
+  const control = comparison.querySelector('.comparison-control');
+  const slider = control.querySelector('input');
+  comparison.classList.add('is-enhanced');
+  control.hidden = false;
+  slider.addEventListener('input', () =>
+    comparison.style.setProperty('--split', slider.value + '%'),
+  );
 }

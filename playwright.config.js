@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { defineConfig } from '@playwright/test';
 export default defineConfig({
   testDir: './tests',
@@ -8,7 +9,9 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:5173',
     headless: true,
     launchOptions: {
-      executablePath: process.env.CHROME_PATH || '/usr/bin/chromium',
+      executablePath:
+        process.env.CHROME_PATH ||
+        (existsSync('/usr/bin/chromium') ? '/usr/bin/chromium' : undefined),
       args: ['--no-sandbox'],
     },
   },

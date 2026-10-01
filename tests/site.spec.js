@@ -65,3 +65,71 @@ test('privacy choices and direct thank-you do not fake acceptance', async ({ pag
   await page.getByRole('button', { name: 'Close privacy choices' }).click();
   await expect(page.getByRole('dialog')).not.toBeVisible();
 });
+
+test('optional analytics is denied by default, rejects personal fields, and supports withdrawal', async ({
+  page,
+}) => {
+  await page.route('https://www.googletagmanager.com/**', (route) =>
+    route.fulfill({ body: '', contentType: 'application/javascript' }),
+  );
+  await page.goto('/');
+  await page.evaluate(async () => {
+    const { initialiseTracking } = await import('/src/tracking.js');
+    window.syntheticTracking = initialiseTracking({
+      approved: true,
+      mode: 'production',
+      gtmId: 'GTM-SYNTHETIC',
+    });
+  });
+  await expect(page.getByRole('region', { name: 'Optional analytics choices' })).toBeVisible();
+  await page.evaluate(() =>
+    window.syntheticTracking.track('generate_lead', {
+      email: 'synthetic@example.com',
+      brief: 'private synthetic message',
+    }),
+  );
+  expect(await page.evaluate(() => window.dataLayer.some((e) => e.event === 'generate_lead'))).toBe(
+    false,
+  );
+  await page.getByRole('button', { name: 'Allow analytics', exact: true }).first().click();
+  await page.evaluate(() =>
+    window.syntheticTracking.track('generate_lead', {
+      email: 'synthetic@example.com',
+      brief: 'private synthetic message',
+      service: 'painting',
+    }),
+  );
+  expect(
+    await page.evaluate(() => window.dataLayer.filter((e) => e.event === 'generate_lead')),
+  ).toEqual([{ event: 'generate_lead', service: 'painting' }]);
+  await page.getByRole('button', { name: 'Privacy choices' }).click();
+  await page.getByRole('button', { name: 'Withdraw analytics permission' }).click();
+  await page.evaluate(() => window.syntheticTracking.track('click_call'));
+  expect(await page.evaluate(() => window.dataLayer.some((e) => e.event === 'click_call'))).toBe(
+    false,
+  );
+  await page.reload();
+  await page.evaluate(async () => {
+    const { initialiseTracking } = await import('/src/tracking.js');
+    window.syntheticTracking = initialiseTracking({
+      approved: true,
+      mode: 'production',
+      gtmId: 'GTM-SYNTHETIC',
+    });
+  });
+  expect(await page.evaluate(() => window.syntheticTracking.accepted)).toBe(false);
+  await expect(page.getByRole('region', { name: 'Optional analytics choices' })).toBeHidden();
+});
+
+test('all routes remain readable without JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  for (const route of routes) {
+    await page.goto('http://127.0.0.1:5173' + route.path);
+    await expect(page.locator('h1')).toBeVisible();
+    expect(await page.locator('main').innerText()).not.toBe('');
+  }
+  await page.goto('http://127.0.0.1:5173/contact/');
+  await expect(page.locator('main a[href^="mailto:"]').first()).toBeVisible();
+  await context.close();
+});

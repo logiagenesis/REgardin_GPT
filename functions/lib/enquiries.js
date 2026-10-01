@@ -1,3 +1,4 @@
+import { createAttachmentLink } from './attachment-links.js';
 import services from '../../src/data/services.json' with { type: 'json' };
 export const MAX_FILE_BYTES = 8 * 1024 * 1024;
 export const MAX_BODY_BYTES = 42 * 1024 * 1024;
@@ -22,7 +23,9 @@ export const isConfigured = (env) =>
     env.EMAIL_API_KEY &&
     env.NOTIFICATION_EMAIL &&
     env.FROM_EMAIL &&
-    env.PUBLIC_ORIGIN,
+    env.PUBLIC_ORIGIN &&
+    env.UPLOAD_LINK_SECRET?.length >= 32 &&
+    env.OPERATOR_TOKEN?.length >= 32,
   );
 export async function hash(value) {
   return Array.from(
@@ -222,6 +225,15 @@ export async function notifyPending(env, receipt, fetcher = fetch, now = new Dat
     .bind(receipt)
     .first();
   if (!row || row.state === 'sent' || row.state === 'sending') return false;
+  if (row.upload_status === 'pending') {
+    if (Date.parse(now) - Date.parse(row.created_at) < 300000) return false;
+    await env.DB.prepare(
+      "UPDATE enquiries SET upload_status = 'incomplete' WHERE id = ? AND upload_status = 'pending'",
+    )
+      .bind(receipt)
+      .run();
+    row.upload_status = 'incomplete';
+  }
   const claim = await env.DB.prepare(
     "UPDATE notification_outbox SET state = 'sending', next_attempt_at = ? WHERE enquiry_id = ? AND state = 'pending' RETURNING enquiry_id",
   )
@@ -229,6 +241,16 @@ export async function notifyPending(env, receipt, fetcher = fetch, now = new Dat
     .first();
   if (!claim) return false;
   try {
+    const files = await env.DB.prepare(
+      'SELECT id, original_name FROM attachments WHERE enquiry_id = ?',
+    )
+      .bind(receipt)
+      .all();
+    const links = await Promise.all(
+      files.results.map(
+        async (f) => `${f.original_name}: ${await createAttachmentLink(env, f.id)}`,
+      ),
+    );
     const response = await fetcher('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -241,7 +263,7 @@ export async function notifyPending(env, receipt, fetcher = fetch, now = new Dat
         to: [env.NOTIFICATION_EMAIL],
         reply_to: row.email,
         subject: 'Regardin project enquiry — ' + row.service,
-        text: `Receipt: ${receipt}\nName: ${row.name}\nPhone: ${row.phone}\nEmail: ${row.email}\nSuburb: ${row.suburb}\nService: ${row.service}\nTiming: ${row.timing || 'Not specified'}\nAttachments: ${row.upload_status}\n\n${row.brief}\n\nAttachments remain in private storage. Use the authorised account to retrieve them; no public link is included.`,
+        text: `Receipt: ${receipt}\nName: ${row.name}\nPhone: ${row.phone}\nEmail: ${row.email}\nSuburb: ${row.suburb}\nService: ${row.service}\nTiming: ${row.timing || 'Not specified'}\nAttachments: ${row.upload_status}\n\n${row.brief}\n\nPrivate attachments (links expire after 15 minutes):\n${links.length ? links.join('\n') : 'No stored attachments.'}\nUse authorised operator access to renew expired links.`,
       }),
     });
     if (!response.ok) throw new Error('Notification provider rejected request: ' + response.status);

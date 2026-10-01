@@ -7,7 +7,7 @@ A static, multi-page website for Regardin Construction in Cape Town. Built with 
 Use Node 24 (minimum 22.12). From this checkout:
 
 ```sh
-npm ci
+npm ci --ignore-scripts
 npm run dev
 ```
 
@@ -18,15 +18,16 @@ npm run build
 npm run check
 npm run lint
 npm run audit:html
+npm run test:unit
 CHROME_PATH=/usr/bin/chromium npm test
 CHROME_PATH=/usr/bin/chromium npm run audit:lighthouse
 ```
 
-The default build is a **noindex design preview**. `npm run build:production` deliberately fails until the outstanding approvals are resolved. See `HANDOVER.md`.
+The default build is a **noindex design preview**. `npm run build:production` deliberately fails until the outstanding approvals are resolved. See `HANDOVER.md` and `docs/runbook.md`. Image assets are processed only after explicit approval in `src/data/assets.json`; `npm run images` creates responsive formats and strips metadata. `npm run contact-sheet` produces a private review sheet from the ignored archive.
 
 ## Content and architecture
 
-`src/data/` holds business facts, service enquiries, testimonial source text and FAQs. `src/render.js` supplies shared header/footer, route content and metadata through the in-repository Vite HTML plugin. Pages contain their content without JavaScript. Fonts are self-hosted; there are no UI frameworks, slider libraries or third-party tracking scripts.
+`src/data/` holds business facts, service enquiries, testimonial source text and FAQs. `src/render.js` supplies shared header/footer, route content and metadata through the in-repository Vite HTML plugin. Pages contain their content without JavaScript. Fonts are self-hosted; there are no UI frameworks or slider libraries. Optional consent-based tracking code is disabled; no real third-party tracking scripts load.
 
 The concept drawings are labelled illustrations. They are never presented as completed Regardin projects. No project case studies have been fabricated.
 

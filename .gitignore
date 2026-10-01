@@ -12,3 +12,4 @@ research/
 *.log
 
 .generated/
+public/fonts/

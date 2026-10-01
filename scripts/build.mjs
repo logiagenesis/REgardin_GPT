@@ -2,6 +2,7 @@ import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { build } from 'vite';
 import { routes, render } from '../src/render.js';
+import tracking from '../src/data/tracking.json' with { type: 'json' };
 import business from '../src/data/business.json' with { type: 'json' };
 const mode = process.env.SITE_MODE || 'preview';
 if (
@@ -40,9 +41,11 @@ await writeFile(
       .join('') +
     '</urlset>',
 );
+const analytics =
+  mode === 'production' && tracking.approved && /^GTM-[A-Z0-9]+$/.test(tracking.gtmId || '');
 await writeFile(
   'dist/_headers',
-  `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://challenges.cloudflare.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'\n${mode === 'production' ? '' : '  X-Robots-Tag: noindex, nofollow\n'}`,
+  `/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com${analytics ? ' https://www.googletagmanager.com' : ''}; style-src 'self' 'unsafe-inline'; img-src 'self' data:${analytics ? ' https://www.google-analytics.com' : ''}; font-src 'self'; connect-src 'self'${analytics ? ' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com' : ''}; frame-src https://challenges.cloudflare.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'\n${mode === 'production' ? '' : '  X-Robots-Tag: noindex, nofollow\n'}`,
 );
 if (mode === 'production') {
   for (const r of routes) {

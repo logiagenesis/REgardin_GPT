@@ -3,6 +3,9 @@ import services from './data/services.json' with { type: 'json' };
 import testimonials from './data/testimonials.json' with { type: 'json' };
 import faqs from './data/faqs.json' with { type: 'json' };
 
+import projects from './data/projects.json' with { type: 'json' };
+import images from './data/generated-images.json' with { type: 'json' };
+
 export const escape = (value) =>
   String(value).replace(
     /[&<>"']/g,
@@ -48,6 +51,18 @@ export const routes = [
       'The Regardin Construction project archive. Approved photographs and project details are being prepared for publication.',
     kind: 'projects',
   },
+  ...projects
+    .filter((p) => p.approved || p.template)
+    .map((project) => ({
+      path: `/projects/${project.slug}/`,
+      title: `${project.title} | Regardin`,
+      description: project.approved
+        ? 'A documented Regardin Construction project, with confirmed scope and approved photographs.'
+        : 'A project-page layout for review. Project facts and photographs are pending approval; no completed project is claimed.',
+      kind: 'project',
+      project,
+      noindex: !project.approved,
+    })),
   {
     path: '/how-we-work/',
     title: 'Planning Your Project | Regardin Construction',
@@ -168,6 +183,36 @@ const process = () =>
   `<ol class="process-list"><li><span>01</span><h3>Describe the space</h3><p>Tell us what you want to change, where it is and how you plan to use it.</p></li><li><span>02</span><h3>Bring the details</h3><p>Share dimensions, photographs and any available plans. Highlight access and site conditions.</p></li><li><span>03</span><h3>Agree the scope</h3><p>Establish the work, materials, timing and written terms before proceeding.</p></li></ol>`;
 const quotes = () =>
   `<div class="quotes">${testimonials.map((t) => `<figure><span class="quote-mark" aria-hidden="true">“</span><blockquote><p>${escape(t.excerpt)}</p></blockquote><figcaption>${escape(t.name)}<span>Excerpt recorded on the existing website</span></figcaption></figure>`).join('')}</div>${notice('testimonial publication permission and attribution approval')}`;
+export function picture(slug, { hero = false, className = '' } = {}) {
+  const image = images[slug];
+  if (!image) return '';
+  const webp = image.variants.filter((v) => v.format === 'webp');
+  const avif = image.variants.filter((v) => v.format === 'avif');
+  const fallback = webp.at(-1);
+  return `<picture class="${escape(className)}"><source type="image/avif" srcset="${avif.map((v) => `${v.url} ${v.width}w`).join(', ')}" sizes="(max-width: 600px) 100vw, 60vw"><img src="${fallback.url}" srcset="${webp.map((v) => `${v.url} ${v.width}w`).join(', ')}" sizes="(max-width: 600px) 100vw, 60vw" width="${fallback.width}" height="${fallback.height}" alt="${escape(image.alt)}" loading="${hero ? 'eager' : 'lazy'}" ${hero ? 'fetchpriority="high"' : ''} decoding="async"></picture>`;
+}
+export function comparison(project) {
+  if (!images[project.before] || !images[project.after]) return '';
+  return `<section class="wrap project-comparison"><p class="eyebrow">THE CHANGE IN CONTEXT</p><h2>Before & after.</h2><div class="comparison" data-comparison><div class="comparison-images"><figure class="comparison-before">${picture(project.before)}<figcaption>Before</figcaption></figure><figure class="comparison-after">${picture(project.after)}<figcaption>After</figcaption></figure></div><div class="comparison-control" hidden><label for="comparison-slider">Compare before and after</label><input id="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Before and after image split"></div></div></section>`;
+}
+function projectPage(project) {
+  const fact = (key, label) => (project[key] ? escape(project[key]) : `[CONFIRM: ${label}]`);
+  const visual =
+    project.hero && images[project.hero]
+      ? picture(project.hero, { hero: true })
+      : `<figure class="detail-art">${drawing('space')}<figcaption>Layout illustration · real project photograph awaiting approval</figcaption></figure>`;
+  return `${heading('PROJECT STORY / ' + (project.approved ? 'CONFIRMED WORK' : 'LAYOUT PREVIEW'), project.approved ? escape(project.title) : 'A project,<br><em>in detail.</em>', project.approved ? escape(project.brief) : 'This page shows the case-study layout. It does not describe a completed project. Confirmed facts and approved photographs will replace the marked fields.')}<section class="wrap project-story"><div class="project-facts"><div><span>Project</span><p>${project.approved ? escape(project.title) : '[CONFIRM: approved project name]'}</p></div><div><span>Location</span><p>${fact('suburb', 'project suburb')}</p></div><div><span>Completed</span><p>${fact('year', 'completion year')}</p></div><div><span>Duration</span><p>${fact('duration', 'project duration')}</p></div></div>${visual}<div class="story-grid"><h2>The brief.<br>The work.<br>The details.</h2><div>${[
+    ['brief', 'The client brief'],
+    ['scope', 'Regardin’s scope'],
+    ['constraints', 'Site constraints'],
+    ['materials', 'Materials & finishes'],
+  ]
+    .map(
+      ([key, label]) =>
+        `<section><h3>${label}</h3><p class="${project[key] ? '' : 'confirmation'}">${fact(key, label)}</p></section>`,
+    )
+    .join('')}</div></div></section>${comparison(project)}${cta()}`;
+}
 function home() {
   return `<section class="hero"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow"><span class="tiny-line"></span> KENSINGTON · CAPE TOWN</p><h1>Building.<br>Renovating.<br><em>Making space.</em></h1><p>Building, renovation and finishing work for homes and businesses. From brickwork to the final coat.</p><div class="hero-actions">${link('/contact/', 'Discuss your project', 'button')}${link('/services/', 'Explore the services')}</div><p class="hero-footnote">REGARDIN CONSTRUCTION <span>—</span> A CONSIDERED APPROACH</p></div><figure class="hero-art">${drawing('space', true)}<span class="vertical-label" aria-hidden="true">FORM. MATERIAL. FINISH.</span><figcaption><span>01 / SPACE & STRUCTURE</span><span>Concept illustration</span></figcaption></figure></div></section>
  <section class="intro wrap"><p class="eyebrow">THE WORK STARTS WITH YOUR SPACE</p><div class="intro-grid"><h2>New possibilities.<br><em>Existing places.</em></h2><div><p class="lead">Some projects change a whole building. Others change the way one corner feels.</p><p>Regardin Construction is based in Kensington, Cape Town, with building and finishing services spanning renovation, masonry, painting, timber and concrete.</p>${link('/about/', 'Get to know Regardin')}</div></div></section>
@@ -192,8 +237,10 @@ function content(route) {
     }
     case 'about':
       return `${heading('ABOUT REGARDIN', 'Building around<br><em>the way you live.</em>', 'Regardin Construction is based in Kensington, Cape Town, with construction and finishing services for homes and businesses.')}<section class="service-detail wrap"><figure class="detail-art">${drawing('space')}<figcaption>Space & structure · concept illustration</figcaption></figure><div><p class="eyebrow">STRUCTURE. MATERIAL. FINISH.</p><h2>One space.<br>Many possibilities.</h2><p>A renovation can mean reworking an existing room. It can mean a new opening, an outdoor timber structure, a concrete surface or a carefully prepared coat of paint.</p><p>Start with what you need the space to do. Bring the details of your site, your ideas and any plans, and use them to establish the work.</p>${link('/services/', 'Explore the services')}${notice('Regard’s role, business history, legal entity and operating model; omitted until verified')}</div></section>${cta()}`;
+    case 'project':
+      return projectPage(route.project);
     case 'projects':
-      return `${heading('THE PROJECT ARCHIVE', 'Real work.<br><em>Its own story.</em>', 'Project photographs should show the work clearly. Project stories should describe what actually happened.')}<section class="archive-note wrap"><span class="archive-index">R / 01</span><div><h2>The archive is being prepared.</h2><p>Approved project photographs and their context are still being assembled. We will add the scope, location and details only when they have been confirmed.</p><p>The drawings across this preview are material studies. They are not photographs of completed Regardin projects.</p>${link('/contact/', 'Ask about work relevant to your project')}${notice('project photographs, publication permission, scope and attribution')}</div></section><section class="material-section"><div class="wrap"><p class="eyebrow">IN THE MEANTIME</p><h2>Explore by material.</h2><div class="material-grid">${services
+      return `${heading('THE PROJECT ARCHIVE', 'Real work.<br><em>Its own story.</em>', 'Project photographs should show the work clearly. Project stories should describe what actually happened.')}<section class="archive-note wrap"><span class="archive-index">R / 01</span><div><h2>The archive is being prepared.</h2><p>Approved project photographs and their context are still being assembled. We will add the scope, location and details only when they have been confirmed.</p><p>The drawings across this preview are material studies. They are not photographs of completed Regardin projects.</p>${link('/contact/', 'Ask about work relevant to your project')}${notice('project photographs, publication permission, scope and attribution')}${link('/projects/project-preview/', 'Review the project-page layout')}</div></section><section class="material-section"><div class="wrap"><p class="eyebrow">IN THE MEANTIME</p><h2>Explore by material.</h2><div class="material-grid">${services
         .filter((s) => ['timber', 'steps'].includes(s.drawing))
         .map(
           (s) =>
@@ -229,24 +276,66 @@ export function render(route, mode = 'preview') {
       : '';
   const preview = mode !== 'production';
   const canonical = `${business.url}${route.path}`;
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': route.kind === 'service' ? 'Service' : 'WebPage',
-    name: route.title,
-    url: canonical,
-    description: route.description,
-    ...(route.kind === 'service'
-      ? {
-          serviceType: route.service.title,
-          provider: {
-            '@type': 'GeneralContractor',
-            name: business.name,
-            telephone: business.phone,
-          },
-        }
-      : {}),
-  };
-  return `<!DOCTYPE html><html lang="en-ZA"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(route.title)}</title><meta name="description" content="${escape(route.description)}"><meta name="robots" content="${preview || route.noindex ? 'noindex, nofollow' : 'index, follow'}"><meta name="theme-color" content="#f7f5f0"><link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(route.title)}"><meta property="og:description" content="${escape(route.description)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="Regardin Construction"><meta name="twitter:card" content="summary"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script><script type="module" src="/src/main.js"></script></head><body>${preview ? '<section class="preview-strip" aria-label="Preview status"><span>DESIGN PREVIEW</span> <span>Content & project photography awaiting approval</span></section>' : ''}<a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a href="/" class="brand" aria-label="Regardin Construction home"><span class="brand-mark" aria-hidden="true">R<span>.</span></span><span class="brand-name">REGARDIN<span>CONSTRUCTION</span></span></a><button type="button" class="menu-toggle" aria-controls="navigation" aria-expanded="false"><span>Menu</span><span class="menu-bars" aria-hidden="true"></span></button><nav id="navigation" aria-label="Main navigation"><a href="/about/"${current('/about/')}>About</a><a href="/services/"${current('/services/')}>Services</a><a href="/projects/"${current('/projects/')}>The work</a><a href="/how-we-work/"${current('/how-we-work/')}>Planning</a><a class="nav-contact" href="/contact/"${current('/contact/')}>Let’s talk ${arrow}</a></nav></div></header><main id="main">${content(route)}</main><footer><div class="wrap footer-grid"><div><a href="/" class="brand footer-brand"><span class="brand-mark" aria-hidden="true">R<span>.</span></span><span class="brand-name">REGARDIN<span>CONSTRUCTION</span></span></a><p>Building, renovation<br>and finishing work.</p><p class="footer-location">${business.location}</p></div><div><h2>Explore</h2><a href="/services/">Services</a><a href="/projects/">Project archive</a><a href="/about/">About Regardin</a><a href="/faq/">Project questions</a><a href="/areas/">Location enquiries</a></div><div><h2>Start a conversation</h2><a href="tel:${business.phoneHref}">${business.phone.replaceAll(' ', '&nbsp;')}</a><a href="mailto:${business.email}">${business.email}</a>${link('/contact/', 'Discuss your project')}</div></div><div class="wrap footer-bottom"><span>© ${new Date().getFullYear()} Regardin Construction</span><div><a href="/privacy-policy/">Privacy</a><a href="/terms-of-service/">Terms</a><button type="button" id="privacy-settings">Privacy choices</button></div><span>BUILT AROUND THE WORK.</span></div></footer><nav class="mobile-contact" aria-label="Mobile contact"><a href="tel:${business.phoneHref}">Call&nbsp;Regardin</a><a href="/contact/">Discuss your project ${arrow}</a></nav><dialog id="privacy-dialog"><button type="button" class="dialog-close" aria-label="Close privacy choices">×</button><p class="eyebrow">YOUR PRIVACY</p><h2>No marketing cookies.</h2><p>This preview does not load analytics or advertising trackers. Your project brief stays on your device until you choose to email it or submit it to a configured service.</p><a href="/privacy-policy/">Read the privacy notice</a></dialog></body></html>`
+  const businessId = business.url + '/#business';
+  const breadcrumbs = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: business.url + '/' },
+  ];
+  if (route.kind === 'service')
+    breadcrumbs.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Services',
+      item: business.url + '/services/',
+    });
+  if (route.kind === 'project')
+    breadcrumbs.push({
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Projects',
+      item: business.url + '/projects/',
+    });
+  if (route.path !== '/')
+    breadcrumbs.push({
+      '@type': 'ListItem',
+      position: breadcrumbs.length + 1,
+      name: route.kind === 'service' ? route.service.title : route.title.split(' | ')[0],
+      item: canonical,
+    });
+  const entities = [
+    {
+      '@type': 'GeneralContractor',
+      '@id': businessId,
+      name: business.name,
+      url: business.url,
+      telephone: business.phone,
+    },
+    {
+      '@type': route.kind === 'service' ? 'Service' : 'WebPage',
+      '@id': canonical + '#page',
+      name: route.title,
+      url: canonical,
+      description: route.description,
+      ...(route.kind === 'service'
+        ? { serviceType: route.service.title, provider: { '@id': businessId } }
+        : { about: { '@id': businessId } }),
+    },
+  ];
+  if (breadcrumbs.length > 1)
+    entities.push({ '@type': 'BreadcrumbList', itemListElement: breadcrumbs });
+  if (['home', 'service', 'faq', 'styleguide'].includes(route.kind))
+    entities.push({
+      '@type': 'FAQPage',
+      mainEntity: faqs
+        .slice(0, route.kind === 'faq' ? faqs.length : route.kind === 'styleguide' ? 2 : 3)
+        .map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+    });
+  const schema = { '@context': 'https://schema.org', '@graph': entities };
+
+  return `<!DOCTYPE html><html lang="en-ZA" class="no-js"><head><meta charset="UTF-8"><link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/dm-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bodoni-moda-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/bodoni-moda-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(route.title)}</title><meta name="description" content="${escape(route.description)}"><meta name="robots" content="${preview || route.noindex ? 'noindex, nofollow' : 'index, follow'}"><meta name="theme-color" content="#f7f5f0"><link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(route.title)}"><meta property="og:description" content="${escape(route.description)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="Regardin Construction"><meta name="twitter:card" content="summary"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script><script type="module" src="/src/main.js"></script></head><body>${preview ? '<section class="preview-strip" aria-label="Preview status"><span>DESIGN PREVIEW</span> <span>Content & project photography awaiting approval</span></section>' : ''}<a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a href="/" class="brand" aria-label="Regardin Construction home"><span class="brand-mark" aria-hidden="true">R<span>.</span></span><span class="brand-name">REGARDIN<span>CONSTRUCTION</span></span></a><button type="button" class="menu-toggle" aria-controls="navigation" aria-expanded="false"><span>Menu</span><span class="menu-bars" aria-hidden="true"></span></button><nav id="navigation" aria-label="Main navigation"><a href="/about/"${current('/about/')}>About</a><a href="/services/"${current('/services/')}>Services</a><a href="/projects/"${current('/projects/')}>The work</a><a href="/how-we-work/"${current('/how-we-work/')}>Planning</a><a class="nav-contact" href="/contact/"${current('/contact/')}>Let’s talk ${arrow}</a></nav></div></header><main id="main">${content(route)}</main><footer><div class="wrap footer-grid"><div><a href="/" class="brand footer-brand"><span class="brand-mark" aria-hidden="true">R<span>.</span></span><span class="brand-name">REGARDIN<span>CONSTRUCTION</span></span></a><p>Building, renovation<br>and finishing work.</p><p class="footer-location">${business.location}</p></div><div><h2>Explore</h2><a href="/services/">Services</a><a href="/projects/">Project archive</a><a href="/about/">About Regardin</a><a href="/faq/">Project questions</a><a href="/areas/">Location enquiries</a></div><div><h2>Start a conversation</h2><a href="tel:${business.phoneHref}">${business.phone.replaceAll(' ', '&nbsp;')}</a><a href="mailto:${business.email}">${business.email}</a>${link('/contact/', 'Discuss your project')}</div></div><div class="wrap footer-bottom"><span>© ${new Date().getFullYear()} Regardin Construction</span><div><a href="/privacy-policy/">Privacy</a><a href="/terms-of-service/">Terms</a><button type="button" id="privacy-settings">Privacy choices</button></div><span>BUILT AROUND THE WORK.</span></div></footer><nav class="mobile-contact" aria-label="Mobile contact"><a href="tel:${business.phoneHref}">Call&nbsp;Regardin</a><a href="/contact/">Discuss your project ${arrow}</a></nav><dialog id="privacy-dialog"><button type="button" class="dialog-close" aria-label="Close privacy choices">×</button><p class="eyebrow">YOUR PRIVACY</p><h2>No marketing cookies.</h2><p>This preview does not load analytics or advertising trackers. Your project brief stays on your device until you choose to email it or submit it to a configured service.</p><a href="/privacy-policy/">Read the privacy notice</a></dialog></body></html>`
     .split(/(<script[\s\S]*?<\/script>)/g)
     .map((part) =>
       part.startsWith('<script')

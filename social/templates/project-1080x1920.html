@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Draft project card</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #e9e4da;
+        color: #1e1f1c;
+        font:
+          32px/1.5 Arial,
+          sans-serif;
+      }
+      main {
+        width: 1080px;
+        height: 1920px;
+        padding: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      h1,
+      blockquote {
+        font:
+          72px/1.15 Georgia,
+          serif;
+        margin: 32px 0;
+      }
+      header,
+      footer,
+      .eyebrow {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+      .photo {
+        height: 960px;
+        background: #d3c9b8;
+        border: 2px dashed #a1432e;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 60px;
+      }
+      .draft {
+        color: #a1432e;
+      }
+      footer {
+        border-top: 2px solid;
+        padding-top: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        REGARDIN / CONSTRUCTION
+        <p class="draft">DRAFT — NOT APPROVED FOR PUBLICATION</p>
+      </header>
+      <section>
+        <div class="photo">APPROVED PROJECT PHOTOGRAPH GOES HERE</div>
+        <h1>[Confirmed project scope]</h1>
+        <p>[Verified project context]</p>
+      </section>
+      <footer>BUILDING. RENOVATING. MAKING SPACE.</footer>
+    </main>
+  </body>
+</html>

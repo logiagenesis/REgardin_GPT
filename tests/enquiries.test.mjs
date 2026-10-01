@@ -71,6 +71,8 @@ function environment() {
     NOTIFICATION_EMAIL: 'owner@example.com',
     FROM_EMAIL: 'Website <website@example.com>',
     PUBLIC_ORIGIN: 'https://example.com',
+    UPLOAD_LINK_SECRET: 'synthetic-test-signing-secret-not-a-real-credential',
+    OPERATOR_TOKEN: 'synthetic-test-operator-token-not-a-real-credential',
   };
 }
 function request(f, options = {}) {
@@ -271,4 +273,33 @@ test('successful verified API request stores receipt before replying', async () 
   } finally {
     globalThis.fetch = original;
   }
+});
+
+test('notification waits for uploads and recovers an interrupted upload without losing the lead', async () => {
+  const env = environment();
+  const created = '2026-10-01T10:00:00.000Z';
+  const result = await storeEnquiry(env, validateFields(form()), crypto.randomUUID(), [], created);
+  env.DB.raw
+    .prepare("UPDATE enquiries SET upload_status = 'pending' WHERE id = ?")
+    .run(result.receipt);
+  let deliveries = 0;
+  const provider = async () => {
+    deliveries++;
+    return new Response('{}', { status: 200 });
+  };
+  assert.equal(
+    await notifyPending(env, result.receipt, provider, '2026-10-01T10:04:00.000Z'),
+    false,
+  );
+  assert.equal(deliveries, 0);
+  assert.equal(
+    await notifyPending(env, result.receipt, provider, '2026-10-01T10:06:00.000Z'),
+    true,
+  );
+  assert.equal(deliveries, 1);
+  assert.equal(
+    env.DB.raw.prepare('SELECT upload_status FROM enquiries WHERE id = ?').get(result.receipt)
+      .upload_status,
+    'incomplete',
+  );
 });
