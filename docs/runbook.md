@@ -1,6 +1,6 @@
 # Development and release runbook — cPanel
 
-The user's cPanel instruction overrides the attached master prompt's default hosting choice. Read docs/cpanel-deployment.md for the deployment package, private layout and staging checks. Cloudflare and GitHub Pages are not deployment requirements.
+The user's cPanel instruction overrides the attached master prompt's default hosting choice. Read docs/cpanel-deployment.md for the deployment package, private layout and staging checks. Cloudflare is not required. GitHub Pages supplies a static design preview; the full PHP deployment remains cPanel.
 
 Use this checkout and Node 24. Run npm ci --ignore-scripts, bash scripts/setup-php.sh, npm run package:cpanel, npm run check, npm run lint, npm run audit:html, npm run test:unit and npm test. The PHP test bootstrap validates an existing PHP 8.2+ runtime or extracts SHA-256-verified Debian 13 amd64 packages into /workspace/.tools without changing system files. CI provisions PHP with PDO SQLite and fileinfo. The cPanel host still needs its own extension verification; a local runtime does not prove the host's configuration.
 
@@ -11,3 +11,5 @@ npm run package:cpanel builds the noindex preview and writes releases/regardin-c
 Online enquiry readiness needs PHP sessions, PDO SQLite, fileinfo, writable private storage, exact HTTPS origin, independently generated signing/operator secrets and confirmed sender/recipient. Unconfigured accounts fail closed. mail() handoff is not mailbox receipt. Configure the private cron, inspect queued/review notifications and verify actual delivery before launch. Native HTML submissions and JavaScript enhancement share validation/storage; direct thank-you visits do not show a stored receipt.
 
 Production approvals remain separate. Resolve contact/photo/brand/legal confirmations, take an authorised WordPress backup and test restoration, review backlinks/retired URLs, verify the production build and Apache indexing/security configuration, then perform only an explicitly approved cutover. No deployment or cutover has occurred.
+
+For the GitHub preview, build with SITE_BASE=/REgardin_GPT/ and VITE_STATIC_PREVIEW=true; check with the same SITE_BASE. The Pages workflow uploads dist and deploys with the GitHub environment. cPanel packaging always uses the root base and PHP-capable configuration. Public deployment must be verified through the workflow/host rather than inferred from git push.

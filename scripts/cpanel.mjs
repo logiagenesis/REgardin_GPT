@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 const result = spawnSync('npm', ['run', 'build'], {
   stdio: 'inherit',
-  env: { ...process.env, SITE_MODE: 'preview' },
+  env: { ...process.env, SITE_MODE: 'preview', SITE_BASE: '/', VITE_STATIC_PREVIEW: 'false' },
 });
 if (result.status !== 0) process.exit(result.status || 1);
 await rm('.cpanel', { recursive: true, force: true });

@@ -1,6 +1,6 @@
 # cPanel deployment — user-confirmed target
 
-The user's explicit cPanel instruction overrides the Cloudflare default in the attached document. No Cloudflare or GitHub Pages deployment is required or authorised. No cPanel access, staging hostname, PHP extension list or mailbox delivery is currently available to this environment; they are not guessed.
+The user's explicit cPanel instruction overrides the Cloudflare default in the attached document. Cloudflare is not required. A separate static GitHub Pages design preview is now expected from the user’s Pages screenshot; the full PHP deployment still targets cPanel. No cPanel access, staging hostname, PHP extension list or mailbox delivery is currently available to this environment; they are not guessed.
 
 ## Deliverable
 

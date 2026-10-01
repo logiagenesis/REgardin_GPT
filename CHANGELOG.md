@@ -1,3 +1,7 @@
+# 0.5 — Visible GitHub Pages design preview
+
+Added the missing build/deploy workflow for the user-configured GitHub Pages source. Fixed repository-base navigation/assets and explicitly disabled PHP/backend submission on the static preview. cPanel remains the full-site deployment target.
+
 # 0.4 — User-confirmed cPanel hosting
 
 Replaced Cloudflare as the deployment target with a cPanel Apache/PHP package. Added private SQLite enquiries/uploads, native HTML form submission, session verification, expiring download links and local-mail retry cron. Added real PHP/HTTP regression tests and a committed ZIP/checksum. Corrected hosting/privacy documentation and cloud startup instructions. No account upload or live cutover.

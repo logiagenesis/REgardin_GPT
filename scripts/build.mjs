@@ -5,6 +5,8 @@ import { routes, render } from '../src/render.js';
 import tracking from '../src/data/tracking.json' with { type: 'json' };
 import business from '../src/data/business.json' with { type: 'json' };
 const mode = process.env.SITE_MODE || 'preview';
+const base = process.env.SITE_BASE || '/';
+if (!/^\/(?:[A-Za-z0-9_-]+\/)*$/.test(base)) throw new Error('Invalid SITE_BASE.');
 if (
   mode === 'production' &&
   (!business.contactApproved || !business.photographyApproved || !business.legalApproved)
@@ -60,6 +62,23 @@ if (mode === 'production') {
       throw new Error('Production contains unconfirmed content: ' + r.path);
   }
 }
+if (base !== '/') {
+  for (const route of routes) {
+    const file =
+      'dist/' +
+      (route.path === '/'
+        ? 'index.html'
+        : route.path.endsWith('.html')
+          ? route.path.slice(1)
+          : route.path.slice(1) + 'index.html');
+    const html = (await readFile(file, 'utf8')).replace(
+      /(\b(?:href|src|action)=")\/(?!\/)([^"]*)/g,
+      (match, prefix, path) => (path.startsWith(base.slice(1)) ? match : prefix + base + path),
+    );
+    await writeFile(file, html);
+  }
+}
+await writeFile('dist/.nojekyll', '');
 console.log(
   `Built ${routes.length} routes in ${mode} mode. Production release remains approval-gated.`,
 );

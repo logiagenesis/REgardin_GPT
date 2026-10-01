@@ -61,8 +61,13 @@ if (form) {
     }
   });
   let connected = false;
-  fetch('/api/enquiries', { headers: { Accept: 'application/json' } })
-    .then((r) => (r.ok ? r.json() : null))
+  const configuration =
+    import.meta.env.VITE_STATIC_PREVIEW === 'true'
+      ? Promise.resolve(null)
+      : fetch('/api/enquiries', { headers: { Accept: 'application/json' } }).then((r) =>
+          r.ok ? r.json() : null,
+        );
+  configuration
     .then((config) => {
       if (!config?.enabled) return;
       if (config.csrf) {

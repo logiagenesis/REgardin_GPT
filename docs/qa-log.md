@@ -55,3 +55,10 @@ Live preview, production deployment and delivered-mail verification are unrun; t
 - Final cPanel correction retest: lint, 22-route build/HTML/content gates, all 33 browser checks and all 21 unit/integration checks pass. No Vite pre-transform errors remain. Linkinator: 34 local links, zero broken. Archive inspection confirms no runtime config, customer storage or Cloudflare deployment files. SHA-256 is committed beside the ZIP.
 - Latest mobile Lighthouse: home 100/100/100/66; contact 99/100/96/66; renovations 100/100/100/66; project template 99/100/100/66 (performance/accessibility/best practices/SEO). Preview noindex warning remains visible. No real cPanel server, public-host or mailbox result is claimed.
 - Cloud environment install/start draft was saved with cPanel/PHP packaging instructions. Local PHP bootstrap and packaging commands were executed successfully. Existing Cloudflare credential declarations are obsolete and unused; the available configuration API cannot delete declarations.
+
+## GitHub Pages preview correction
+
+- User screenshot showed Pages set to GitHub Actions but no deployment. Added a real build/upload/deploy workflow; cPanel remains the full PHP host.
+- Repository-base build, HTML validation and link/content gate pass for all 22 routes. Chromium checked every prefixed route with axe, local asset responses and navigation prefixes: zero violations, page errors or HTTP failures. Static contact fallback is visible and online submission stays hidden. The first local axe harness required an explicit browser context; corrected the harness and reran successfully.
+- Backend fetch is compiled out of the static preview. cPanel package explicitly builds with root base and PHP-enabled configuration. No production domain/cPanel cutover is performed.
+- Direct Actions API and public-preview HTTP inspection remain denied by the network proxy (CONNECT 403). Workflow and deployment status will not be described as successful without evidence.

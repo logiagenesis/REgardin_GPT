@@ -16,6 +16,7 @@ const entries = Object.fromEntries(
 );
 export default defineConfig({
   root: '.generated',
+  base: process.env.SITE_BASE || '/',
   publicDir: resolve('public'),
   build: { outDir: resolve('dist'), emptyOutDir: true, rollupOptions: { input: entries } },
   plugins: [

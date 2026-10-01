@@ -1,6 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import { routes } from '../src/render.js';
 const errors = [];
+const base = process.env.SITE_BASE || '/';
 for (const r of routes) {
   const filename =
     'dist/' +
@@ -21,7 +22,12 @@ for (const r of routes) {
       continue;
     }
     if (!href.startsWith('/')) continue;
-    const path = href.split(/[?#]/)[0];
+    const original = href.split(/[?#]/)[0];
+    if (base !== '/' && !original.startsWith(base)) {
+      errors.push(r.path + ': link escapes repository base ' + original);
+      continue;
+    }
+    const path = base === '/' ? original : '/' + original.slice(base.length);
     if (path === '#main' || !path) continue;
     const target =
       'dist/' +

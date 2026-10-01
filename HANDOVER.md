@@ -41,3 +41,7 @@ Website release fec5088d8fe7a9caf4fdf04193eae09eec11300a is on main and verified
 ## cPanel correction validation
 
 cPanel PHP syntax, real SQLite/private access unit checks and real PHP HTTP multipart/native-form regression tests passed. The earlier JS-free submission limitation is resolved in the cPanel handler; staging browser/HTTPS acceptance remains pending account access. The cPanel package replaces Cloudflare-specific legal/deployment instructions. PHP session-storage configuration and the receipt-rendering callback were corrected during local checks. Browser regressions and Lighthouse results are recorded in docs/qa-log.md. The Apache configuration is packaged but not claimed tested on a real cPanel account.
+
+## GitHub Pages preview
+
+The latest “Nothing?” screenshot shows a Pages source set to GitHub Actions with no deployed workflow. The earlier interpretation excluding Pages was too broad. Added a static Pages preview workflow while retaining cPanel for the full PHP site. Expected destination: https://logiagenesis.github.io/REgardin_GPT/. Build links/assets use /REgardin_GPT/; the backend is explicitly disabled and call/email preparation stays available. The cPanel package/production domain are separate and untouched. A push triggers deployment; workflow success and public HTTP status are not claimed until observed. GitHub API access currently returns network-proxy 403.

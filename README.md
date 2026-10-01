@@ -39,4 +39,8 @@ The concept drawings are labelled illustrations. They are never presented as com
 
 The site runs as static HTML/CSS/JS on the host, with PHP for session-verified enquiries, private SQLite storage/uploads and queued local-mail notifications. Node is not needed on cPanel. PHP extension/account configuration and actual mailbox delivery remain unverified. There is no public preview URL yet because this environment has no cPanel staging access.
 
-Upload to an isolated staging document root; keep private files outside every public root. The package stays noindex. Do not replace live WordPress or alter DNS/mail records. GitHub Actions runs QA only; no GitHub Pages or Cloudflare deployment is configured. Earlier Functions/Worker code remains historical source and is excluded from the cPanel package.
+Upload to an isolated staging document root; keep private files outside every public root. The package stays noindex. Do not replace live WordPress or alter DNS/mail records. GitHub Actions runs QA and deploys a static design preview to GitHub Pages. cPanel remains the full PHP site target; Cloudflare is not required. Earlier Functions/Worker code remains historical source and is excluded from the cPanel package.
+
+## GitHub Pages design preview
+
+The Pages source in the user screenshot is GitHub Actions. `.github/workflows/pages.yml` builds and deploys main at `https://logiagenesis.github.io/REgardin_GPT/`. This is the configured destination, not a claim that deployment succeeded. The preview uses repository-prefixed links/fonts/assets and disables backend requests. GitHub Pages cannot execute PHP; call/email preparation remains available. The full enquiry service runs in the separate cPanel package.
