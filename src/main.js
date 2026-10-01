@@ -94,6 +94,7 @@ if (form) {
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'The enquiry could not be saved.');
       sessionStorage.setItem('regardin-receipt', result.receipt);
+      sessionStorage.setItem('regardin-upload-status', result.uploadStatus || 'none');
       window.location.href = '/thank-you/';
     } catch (error) {
       status.textContent = error.message + ' Your entered details are still here.';
@@ -116,6 +117,13 @@ if (receiptStatus) {
       receipt +
       '. This confirms secure storage, not a booking or a confirmed reply time.';
     receiptStatus.append(heading, message);
+    if (sessionStorage.getItem('regardin-upload-status') === 'incomplete') {
+      const warning = document.createElement('p');
+      warning.textContent =
+        'Your enquiry was saved, but one or more attachments could not be stored. Contact Regardin to arrange another way to share them.';
+      receiptStatus.append(warning);
+    }
+    sessionStorage.removeItem('regardin-upload-status');
     sessionStorage.removeItem('regardin-receipt');
   }
 }

@@ -15,3 +15,14 @@
 ## Remaining checks
 
 Live preview, production deployment and delivered-mail verification are unrun; they require account configuration. Online submission is disabled in this draft. The production approval gate remains active.
+
+## Enquiry backend
+
+- 13 tests passed against real SQLite tables using the shipped migration. External Turnstile/R2/mail boundary failures are simulated; no live delivery claim.
+- Cloudflare Functions build passed in Wrangler 4.145.0.
+- Local Pages runtime: GET /api/enquiries reports disabled without credentials; POST returns 503; /our-team/ returns 301; /portfolios/ returns 410.
+- Browser recheck: 30 passed after receipt/upload-status handling.
+- Live-site and Drive HTTP access now works after the earlier proxy denial. Nine prior-audit files retrieved into ignored research storage. Archive and detailed reconciliation are in progress.
+
+- Backend push audit: build, lint, HTML, internal links, 30 browser checks and 13 SQL/API checks pass. Lighthouse rerun passes required performance/accessibility/best-practice thresholds; preview crawlability remains the expected SEO warning.
+- A direct Lighthouse CLI attempt failed because Chromium was launched without headless mode; the configured Lighthouse CI runner was rerun successfully. No result from the failed run is used.
